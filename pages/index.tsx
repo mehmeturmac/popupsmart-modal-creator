@@ -3,6 +3,7 @@ import Head from 'next/head';
 
 // Components
 import Header from '../components/Header';
+import Container from '../components/Container';
 import Footer from '../components/Footer';
 
 const Home: NextPage = () => {
@@ -13,6 +14,7 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Header />
+      <Container />
       <Footer />
     </>
   );
