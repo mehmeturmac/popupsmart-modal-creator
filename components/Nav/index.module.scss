@@ -1,0 +1,25 @@
+.nav {
+  @apply flex justify-between items-center max-w-6xl m-auto p-4 font-semibold;
+  .left {
+    @apply flex items-center space-x-1 font-extrabold p-2;
+  }
+  ul {
+    @apply hidden lg:flex items-center space-x-6 py-2 pr-52;
+  }
+  .right {
+    @apply hidden lg:flex items-center space-x-7 p-2;
+    button {
+      @apply bg-[#7D4AEA] text-white px-5 py-2 rounded-xl shadow-lg;
+    }
+  }
+  .mobileBtn {
+    @apply lg:hidden flex items-center space-x-7 p-2 rounded hover:bg-[#7D4AEA] hover:text-white;
+  }
+}
+
+.mobileMenu {
+  @apply lg:hidden flex flex-col text-center font-semibold border-b-2;
+  a {
+    @apply p-4 hover:bg-[#7D4AEA] hover:text-white w-full;
+  }
+}
