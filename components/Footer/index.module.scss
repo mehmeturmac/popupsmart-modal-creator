@@ -1,0 +1,60 @@
+.footer {
+  @apply text-center mt-6 max-w-6xl m-auto;
+  h3 {
+    @apply text-4xl font-semibold mt-32 mb-12;
+  }
+  .topCards {
+    @apply flex flex-col md:flex-row space-x-0 md:space-x-3 space-y-3 md:space-y-0 items-center md:items-start;
+    span {
+      @apply flex flex-col bg-[#F5F5F5] rounded-xl items-center px-20 py-14 space-y-3 w-96 h-72;
+      h5 {
+        @apply text-lg font-semibold pt-3;
+      }
+      p {
+        @apply text-sm;
+      }
+    }
+  }
+  .questions {
+    @apply flex flex-col max-w-full text-start;
+    details {
+      @apply p-6 border-y rounded-lg text-[#777] space-y-3 w-full relative;
+      summary {
+        @apply list-none font-semibold text-lg;
+        svg {
+          @apply hidden md:block absolute top-6 right-6;
+        }
+        .svg2 {
+          @apply invisible;
+        }
+      }
+      p {
+        @apply w-4/5;
+      }
+      &[open] {
+        @apply text-[#000] p-7 bg-[#F5F5F5];
+        .svg1 {
+          @apply invisible;
+        }
+        .svg2 {
+          @apply visible;
+        }
+      }
+    }
+  }
+  .botCards {
+    @apply flex flex-col md:flex-row space-x-0 md:space-x-3 space-y-3 md:space-y-0 items-center md:items-start;
+    span {
+      @apply flex flex-col items-center p-9 space-y-3 w-96;
+      h5 {
+        @apply text-lg font-semibold pt-3;
+      }
+      p {
+        @apply text-sm;
+      }
+    }
+  }
+  .popupsmart {
+    @apply flex flex-col items-center my-9 space-y-3 text-sm;
+  }
+}
