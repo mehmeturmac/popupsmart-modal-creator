@@ -1,1 +1,5 @@
-# popupsmart-modal-creator
+# Popupsmart Modal Creator
+
+## License
+
+[MIT](https://choosealicense.com/licenses/mit/)
