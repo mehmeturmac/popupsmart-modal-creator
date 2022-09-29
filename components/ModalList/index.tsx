@@ -2,7 +2,7 @@ import styles from './index.module.scss';
 
 import Card from './Card';
 
-const list = Array.from(Array(5), (_, i) => 'Modal' + i);
+const list = Array.from(Array(1), (_, i) => 'Modal' + i);
 
 export default function ModalList() {
   return (

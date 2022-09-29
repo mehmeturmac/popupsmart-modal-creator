@@ -1,0 +1,33 @@
+.targeting {
+  @apply flex flex-col space-y-7 text-sm;
+  .title {
+    @apply flex items-center font-semibold text-base;
+    h6 {
+      @apply text-center p-1 rounded-full bg-[#EAEAEA] w-8 h-8 pt-1;
+    }
+    p {
+      @apply text-lg px-3;
+    }
+  }
+  .subtitle {
+    @apply flex justify-between;
+    h5 {
+      @apply font-semibold;
+    }
+    label {
+      @apply inline-flex relative items-center mb-5 cursor-pointer;
+    }
+  }
+  .textBox {
+    @apply w-full px-3 py-2 border-2 rounded-lg;
+  }
+  .selectDevice {
+    @apply flex justify-between space-x-4;
+    label {
+      @apply inline-flex items-center py-3 px-5 bg-[#F5F5F5] rounded-lg space-x-2 w-full;
+      input {
+        @apply accent-[#7D4AEA] w-4 h-4;
+      }
+    }
+  }
+}

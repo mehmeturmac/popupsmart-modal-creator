@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import styles from './Appearance.module.scss';
+import styles from './Content.module.scss';
 import axios from 'axios';
 
 const imgSvg = (
@@ -19,14 +19,14 @@ const imgSvg = (
   </svg>
 );
 
-export default function Appearance() {
-  const [logo, setLogo] = useState();
+export default function Content() {
+  const [image, setImage] = useState();
 
   const handleDrop = async (e: any) => {
     e.preventDefault();
     if (!e.dataTransfer.files[0]) return;
     if (e.dataTransfer.files[0].type === 'image/jpeg' || e.dataTransfer.files[0].type === 'image/png') {
-      uploadLogo(e.dataTransfer.files[0]);
+      uploadImg(e.dataTransfer.files[0]);
     } else alert('Logo must be a picture (jpeg/png)');
   };
 
@@ -34,59 +34,36 @@ export default function Appearance() {
     e.preventDefault();
     if (!e.target.files[0]) return;
     if (e.target.files[0].type === 'image/jpeg' || e.target.files[0].type === 'image/png') {
-      uploadLogo(e.target.files[0]);
+      uploadImg(e.target.files[0]);
     } else alert('Logo must be a picture (jpeg/png)');
   };
 
-  const uploadLogo = (img: any) => {
+  const uploadImg = (img: any) => {
     const fd = new FormData();
     fd.append('key', '00002142ce6cb459d5da7c21a22cc695');
     fd.append('media', img, img.name);
-    axios.post('https://thumbsnap.com/api/upload', fd).then(({ data }) => setLogo(data.data.media));
+    axios.post('https://thumbsnap.com/api/upload', fd).then(({ data }) => setImage(data.data.media));
   };
 
   return (
-    <div className={styles.appearance}>
+    <div className={styles.content}>
       <div className={styles.title}>
-        <h6>2</h6>
-        <p>
-          Appearance <span>(Size, colors, logo)</span>
-        </p>
+        <h6>3</h6>
+        <p>Content</p>
       </div>
-      <div className={styles.size}>
-        <h5>Size</h5>
-        <div className={styles.sizeGroup} role="group">
-          {['Small', 'Medium', 'Large'].map((x, i) => (
-            <div key={i}>
-              <input type="radio" id={`size${i}`} name="sizeGroup" defaultChecked={i === 1 ? true : false} />
-              <label htmlFor={`size${i}`}>{x}</label>
-            </div>
-          ))}
-        </div>
+      <div className={styles.contentInputs}>
+        <h5>Edit your content</h5>
+        <input type="text" placeholder="Sign Up" />
+        <input type="text" placeholder="Enter your email" />
+        <input type="text" placeholder="Sign Up" />
+        <input type="text" placeholder="By singning up, you agree to Privacy Policy" />
       </div>
-      <div className={styles.position}>
-        <h5>Position</h5>
-        <div className={styles.positionGroup} role="group2">
-          {[...Array(9)].map((x, i) => (
-            <label key={i}>
-              <input type="radio" id={`position${i}`} name="positionGroup" defaultChecked={i === 4 ? true : false} />
-              <span></span>
-            </label>
-          ))}
-        </div>
-      </div>
-      <div className={styles.color}>
-        <h5>Colors</h5>
-        <input type="color" />
-        <input type="color" />
-        <input type="color" />
-      </div>
-      <div className={styles.logo}>
-        <h5>Upload Logo</h5>
+      <div className={styles.image}>
+        <h5>Upload Image</h5>
         <div className={styles.dropzone} onDrop={(e) => handleDrop(e)} onDragOver={(e) => e.preventDefault()}>
           <input id="imgSelect" type="file" className={styles.files} onChange={(e) => handleUpload(e)} />
           <label htmlFor="imgSelect">
-            {logo ? <img src={logo} alt="logo" /> : imgSvg}
+            {image ? <img src={image} alt="logo" /> : imgSvg}
             <span>
               Drop your image here or <span>upload</span>
             </span>

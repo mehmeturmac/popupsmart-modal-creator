@@ -1,12 +1,12 @@
 .appearance {
   @apply flex flex-col space-y-7 text-sm;
   .title {
-    @apply flex;
+    @apply flex items-center font-semibold text-base;
     h6 {
-      @apply text-center p-1 rounded-full bg-[#EAEAEA] w-8 h-8;
+      @apply text-center p-1 rounded-full bg-[#EAEAEA] w-8 h-8 pt-1;
     }
     p {
-      @apply text-lg px-3 font-semibold;
+      @apply text-lg px-3;
       span {
         @apply font-normal;
       }
@@ -56,12 +56,18 @@
   }
 
   .logo .dropzone {
-    @apply flex flex-col w-full h-44 items-center justify-center border-2 border-dashed rounded-xl mt-2;
+    @apply flex flex-col w-full h-44 border-2 border-dashed rounded-xl mt-2;
     input {
       @apply hidden;
     }
     label {
-      @apply flex flex-col items-center space-y-3;
+      @apply flex flex-col items-center justify-center space-y-3 w-full h-full;
+      img {
+        @apply w-20 h-20;
+      }
+      span span {
+        @apply text-[#7D4AEA] font-semibold underline;
+      }
     }
   }
 }

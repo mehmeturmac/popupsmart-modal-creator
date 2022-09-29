@@ -76,7 +76,7 @@
       }
     }
     .text {
-      @apply grid grid-flow-col text-white absolute top-[300px];
+      @apply grid grid-cols-4 text-white absolute top-[300px];
       span {
         @apply w-60 p-5;
         h4 {
@@ -87,7 +87,7 @@
         }
       }
       h5 {
-        @apply font-semibold text-4xl p-5 w-11/12;
+        @apply font-semibold text-4xl py-5;
       }
     }
   }

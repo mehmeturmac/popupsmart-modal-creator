@@ -18,7 +18,7 @@
   .questions {
     @apply flex flex-col max-w-full text-start;
     details {
-      @apply p-6 border-y rounded-lg text-[#777] space-y-3 w-full relative;
+      @apply p-6 border-y text-[#777] space-y-3 w-full relative;
       summary {
         @apply list-none font-semibold text-lg;
         svg {

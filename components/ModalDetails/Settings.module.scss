@@ -1,0 +1,42 @@
+.settings {
+  @apply flex flex-col space-y-7 text-sm;
+  .title {
+    @apply flex items-center font-semibold text-base;
+    h6 {
+      @apply text-center p-1 rounded-full bg-[#EAEAEA] w-8 h-8 pt-1;
+    }
+    p {
+      @apply text-lg px-3;
+    }
+  }
+  h5 {
+    @apply font-semibold text-lg;
+    p {
+      @apply text-xs;
+      span {
+        @apply font-semibold;
+      }
+    }
+  }
+  input {
+    @apply w-full px-3 py-2 border-2 rounded-lg;
+  }
+  label {
+    @apply flex items-center space-x-2;
+    input {
+      @apply accent-[#7D4AEA] w-4 h-4;
+    }
+  }
+  button {
+    @apply bg-[#7D4AEA] text-white px-7 py-5 rounded-xl text-lg w-44;
+  }
+  code {
+    @apply bg-[#333333] text-white p-4 rounded-xl flex flex-col;
+    button {
+      @apply text-sm py-1 px-4 rounded-full w-2/5 self-end;
+    }
+  }
+  p {
+    @apply flex text-xs space-x-1;
+  }
+}

@@ -1,10 +1,10 @@
 .modalList {
   @apply flex items-center font-semibold;
   h6 {
-    @apply text-center p-1 rounded-full bg-[#EAEAEA] w-8 h-8;
+    @apply text-center pt-1 rounded-full bg-[#EAEAEA] w-8 h-8;
   }
   p {
-    @apply text-lg px-3;
+    @apply px-3 text-lg;
   }
 }
 

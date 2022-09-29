@@ -1,3 +1,3 @@
 .modalPreview {
-  @apply col-span-2 bg-slate-900;
+  @apply col-span-2 bg-slate-900 order-first lg:order-last;
 }
