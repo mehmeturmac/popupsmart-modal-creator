@@ -1,0 +1,67 @@
+.appearance {
+  @apply flex flex-col space-y-7 text-sm;
+  .title {
+    @apply flex;
+    h6 {
+      @apply text-center p-1 rounded-full bg-[#EAEAEA] w-8 h-8;
+    }
+    p {
+      @apply text-lg px-3 font-semibold;
+      span {
+        @apply font-normal;
+      }
+    }
+  }
+
+  .size .sizeGroup {
+    @apply flex rounded-lg shadow-sm bg-[#F5F5F5] p-1 max-w-min mt-2;
+    div {
+      @apply relative overflow-hidden;
+      input {
+        @apply absolute -left-96;
+      }
+      label {
+        @apply flex py-2 px-4 text-[#777] font-semibold hover:bg-[#7D4AEA] hover:text-white rounded-lg cursor-pointer;
+      }
+      input:checked + label {
+        @apply text-black bg-white w-full;
+      }
+    }
+  }
+
+  .position .positionGroup {
+    @apply grid grid-cols-3 grid-rows-3 w-[100px] h-[100px] mt-2;
+    label {
+      @apply flex cursor-pointer relative overflow-hidden;
+      input {
+        @apply absolute -left-96;
+      }
+      span {
+        @apply bg-white w-7 h-7 border-2 rounded-md;
+      }
+      input:checked + span {
+        @apply bg-[#7D4AEA];
+      }
+    }
+  }
+
+  .color input {
+    @apply w-[42px] h-[44px] cursor-pointer bg-transparent mt-2;
+    &::-webkit-color-swatch {
+      @apply rounded-[10px];
+    }
+    &::-moz-color-swatch {
+      @apply rounded-[10px];
+    }
+  }
+
+  .logo .dropzone {
+    @apply flex flex-col w-full h-44 items-center justify-center border-2 border-dashed rounded-xl mt-2;
+    input {
+      @apply hidden;
+    }
+    label {
+      @apply flex flex-col items-center space-y-3;
+    }
+  }
+}

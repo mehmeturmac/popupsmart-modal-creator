@@ -1,0 +1,13 @@
+@import 'https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap';
+.modal0-popup {
+  background-color: #fa764f;
+  position: fixed;
+  z-index: 9999999;
+  bottom: 0;
+  margin-bottom: 40px;
+  margin-left: 40px;
+  margin-right: 40px;
+  display: flex;
+  flex-direction: column;
+  max-height: calc(100vh - 60px);
+}

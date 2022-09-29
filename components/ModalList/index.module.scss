@@ -1,0 +1,13 @@
+.modalList {
+  @apply flex items-center font-semibold;
+  h6 {
+    @apply text-center p-1 rounded-full bg-[#EAEAEA] w-8 h-8;
+  }
+  p {
+    @apply text-lg px-3;
+  }
+}
+
+.listGrid {
+  @apply grid grid-cols-4 gap-4 py-6;
+}
