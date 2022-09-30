@@ -30,8 +30,11 @@
   button {
     @apply bg-[#7D4AEA] text-white px-7 py-5 rounded-xl text-lg w-44;
   }
-  code {
-    @apply bg-[#333333] text-white p-4 rounded-xl flex flex-col;
+  .code {
+    @apply bg-[#333333] text-white p-4 rounded-xl flex flex-col h-fit;
+    span {
+      @apply bg-[#333333] h-52 break-all;
+    }
     button {
       @apply text-sm py-1 px-4 rounded-full w-2/5 self-end;
     }

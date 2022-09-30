@@ -1,6 +1,8 @@
-import { useState } from 'react';
 import styles from './Content.module.scss';
 import axios from 'axios';
+import * as React from 'react';
+import { MainContext } from '../../context/mainContext';
+import { MainContextInterface } from '../../context/@types.main';
 
 const imgSvg = (
   <svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -20,7 +22,7 @@ const imgSvg = (
 );
 
 export default function Content() {
-  const [image, setImage] = useState();
+  const { contents, setContents, image, setImage } = React.useContext(MainContext) as MainContextInterface;
 
   const handleDrop = async (e: any) => {
     e.preventDefault();
@@ -40,9 +42,9 @@ export default function Content() {
 
   const uploadImg = (img: any) => {
     const fd = new FormData();
-    fd.append('key', '00002142ce6cb459d5da7c21a22cc695');
+    fd.append('key', `${process.env.NEXT_PUBLIC_API_KEY}`);
     fd.append('media', img, img.name);
-    axios.post('https://thumbsnap.com/api/upload', fd).then(({ data }) => setImage(data.data.media));
+    axios.post(`${process.env.NEXT_PUBLIC_API}`, fd).then(({ data }) => setImage(data.data.media));
   };
 
   return (
@@ -53,12 +55,11 @@ export default function Content() {
       </div>
       <div className={styles.contentInputs}>
         <h5>Edit your content</h5>
-        <input type="text" placeholder="Sign Up" />
-        <input type="text" placeholder="Enter your email" />
-        <input type="text" placeholder="Sign Up" />
-        <input type="text" placeholder="By singning up, you agree to Privacy Policy" />
+        {Object.keys(contents).map((key, i) => (
+          <input type="text" key={i} placeholder={contents[key]} value={contents[key]} onChange={(e) => setContents({ ...contents, [key]: e.target.value })} />
+        ))}
       </div>
-      <div className={styles.image}>
+      <div className={`${styles.image} ${!image ? ' hidden' : ''}`}>
         <h5>Upload Image</h5>
         <div className={styles.dropzone} onDrop={(e) => handleDrop(e)} onDragOver={(e) => e.preventDefault()}>
           <input id="imgSelect" type="file" className={styles.files} onChange={(e) => handleUpload(e)} />

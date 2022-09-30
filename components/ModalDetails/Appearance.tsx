@@ -1,6 +1,8 @@
-import { useState } from 'react';
 import styles from './Appearance.module.scss';
 import axios from 'axios';
+import * as React from 'react';
+import { MainContext } from '../../context/mainContext';
+import { MainContextInterface } from '../../context/@types.main';
 
 const imgSvg = (
   <svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -20,7 +22,7 @@ const imgSvg = (
 );
 
 export default function Appearance() {
-  const [logo, setLogo] = useState();
+  const { size, setSize, position, setPosition, colors, setColors, logo, setLogo } = React.useContext(MainContext) as MainContextInterface;
 
   const handleDrop = async (e: any) => {
     e.preventDefault();
@@ -40,9 +42,9 @@ export default function Appearance() {
 
   const uploadLogo = (img: any) => {
     const fd = new FormData();
-    fd.append('key', '00002142ce6cb459d5da7c21a22cc695');
+    fd.append('key', `${process.env.NEXT_PUBLIC_API_KEY}`);
     fd.append('media', img, img.name);
-    axios.post('https://thumbsnap.com/api/upload', fd).then(({ data }) => setLogo(data.data.media));
+    axios.post(`${process.env.NEXT_PUBLIC_API}`, fd).then(({ data }) => setLogo(data.data.media));
   };
 
   return (
@@ -56,10 +58,10 @@ export default function Appearance() {
       <div className={styles.size}>
         <h5>Size</h5>
         <div className={styles.sizeGroup} role="group">
-          {['Small', 'Medium', 'Large'].map((x, i) => (
+          {['small', 'medium', 'large'].map((x, i) => (
             <div key={i}>
-              <input type="radio" id={`size${i}`} name="sizeGroup" defaultChecked={i === 1 ? true : false} />
-              <label htmlFor={`size${i}`}>{x}</label>
+              <input type="radio" id={`size${i}`} name="sizeGroup" defaultChecked={x === size ? true : false} onClick={() => setSize(x)} />
+              <label htmlFor={`size${i}`}>{x[0].toUpperCase() + x.slice(1)}</label>
             </div>
           ))}
         </div>
@@ -69,7 +71,7 @@ export default function Appearance() {
         <div className={styles.positionGroup} role="group2">
           {[...Array(9)].map((x, i) => (
             <label key={i}>
-              <input type="radio" id={`position${i}`} name="positionGroup" defaultChecked={i === 4 ? true : false} />
+              <input type="radio" id={`position${i}`} name="positionGroup" defaultChecked={i === position ? true : false} onClick={() => setPosition(i)} />
               <span></span>
             </label>
           ))}
@@ -77,16 +79,16 @@ export default function Appearance() {
       </div>
       <div className={styles.color}>
         <h5>Colors</h5>
-        <input type="color" />
-        <input type="color" />
-        <input type="color" />
+        <input type="color" value={colors.color1} onChange={(e) => setColors({ ...colors, color1: e.target.value })} />
+        <input type="color" value={colors.color2} onChange={(e) => setColors({ ...colors, color2: e.target.value })} />
+        <input type="color" value={colors.color3} onChange={(e) => setColors({ ...colors, color3: e.target.value })} />
       </div>
-      <div className={styles.logo}>
+      <div className={`${styles.logo} ${!logo ? ' hidden' : ''}`}>
         <h5>Upload Logo</h5>
         <div className={styles.dropzone} onDrop={(e) => handleDrop(e)} onDragOver={(e) => e.preventDefault()}>
           <input id="imgSelect" type="file" className={styles.files} onChange={(e) => handleUpload(e)} />
           <label htmlFor="imgSelect">
-            {logo ? <img src={logo} alt="logo" /> : imgSvg}
+            {logo === 'default' ? imgSvg : <img src={logo} alt="logo" />}
             <span>
               Drop your image here or <span>upload</span>
             </span>

@@ -1,6 +1,11 @@
 import styles from './Settings.module.scss';
+import * as React from 'react';
+import { MainContext } from '../../context/mainContext';
+import { MainContextInterface } from '../../context/@types.main';
 
 export default function Settings() {
+  const { script } = React.useContext(MainContext) as MainContextInterface;
+
   return (
     <div className={styles.settings}>
       <div className={styles.title}>
@@ -24,10 +29,10 @@ export default function Settings() {
         <span>Send click data</span>
       </label>
       <button>Get your Code</button>
-      <code>
-        {`<script type="text/javascript" src="https://popupsmart.com/freechat.js"></script><script> window.start.init({ title: "Hi there :v:", message: "How may we help you? Just send us a message now to get assistance.", color: "#FA764F", position: "right", placeholder: "Enter your message", withText: "Write with", viaWhatsapp: "Or write us directly via Whatsapp", gty: "Go to your", awu: "and write us", connect: "Connect now", button: "Write us", device: "everywhere", services: [{"name":"whatsapp","content":null}]})</script>`}
+      <div className={styles.code}>
+        <span>{script}</span>
         <button>Copy the code</button>
-      </code>
+      </div>
       <p>
         <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path

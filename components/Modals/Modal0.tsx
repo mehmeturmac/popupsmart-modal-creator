@@ -1,4 +1,7 @@
-import React from 'react';
+import styles from './Modal0.module.scss';
+import * as React from 'react';
+import { MainContext } from '../../context/mainContext';
+import { MainContextInterface } from '../../context/@types.main';
 
 const closeBtn = (
   <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -10,23 +13,36 @@ const closeBtn = (
   </svg>
 );
 
+const logoSvg = (
+  <svg width="90" height="90" viewBox="0 0 90 90" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M45 90C69.8528 90 90 69.8528 90 45C90 20.1472 69.8528 0 45 0C20.1472 0 0 20.1472 0 45C0 69.8528 20.1472 90 45 90Z" fill="#7D4AEA" />
+    <path
+      d="M50 46.18L51.8 53.94L45 49.84L38.2 53.94L40 46.2L34 41.02L41.92 40.34L45 33.04L48.08 40.32L56 41L50 46.18ZM45 27.38L59 33.6V43C59 52.04 53.04 60.38 45 62.86C36.96 60.38 31 52.04 31 43V33.6L45 27.38ZM45 23L27 31V43C27 54.1 34.68 64.48 45 67C55.32 64.48 63 54.1 63 43V31L45 23Z"
+      fill="white"
+    />
+  </svg>
+);
+
 export default function Modal0() {
+  const { size, colors, logo, setLogo, contents, setContents } = React.useContext(MainContext) as MainContextInterface;
+
+  React.useEffect(() => {
+    setContents({ content1: 'Security Code', content2: 'This code expires in 24 hours', content3: 'Code', content4: 'Cancel', content5: 'Continue' });
+    setLogo('default');
+  }, []);
+
   return (
-    <div className="flex flex-col items-center bg-red-500 p-10 h-[480px] w-[446px] space-y-5 relative rounded-xl">
-      <button className="absolute top-3 right-3">{closeBtn}</button>
-      <svg width="90" height="90" viewBox="0 0 90 90" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M45 90C69.8528 90 90 69.8528 90 45C90 20.1472 69.8528 0 45 0C20.1472 0 0 20.1472 0 45C0 69.8528 20.1472 90 45 90Z" fill="#7D4AEA" />
-        <path
-          d="M50 46.18L51.8 53.94L45 49.84L38.2 53.94L40 46.2L34 41.02L41.92 40.34L45 33.04L48.08 40.32L56 41L50 46.18ZM45 27.38L59 33.6V43C59 52.04 53.04 60.38 45 62.86C36.96 60.38 31 52.04 31 43V33.6L45 27.38ZM45 23L27 31V43C27 54.1 34.68 64.48 45 67C55.32 64.48 63 54.1 63 43V31L45 23Z"
-          fill="white"
-        />
-      </svg>
-      <h3 className="text-3xl font-bold">Security Code</h3>
-      <h5 className="text-2xl">This code expires in 24 hours</h5>
-      <input type="text" placeholder="Code" className="text-xl p-4 border-2 rounded-lg w-full" />
-      <div className="space-x-3 w-full flex justify-center">
-        <button className="bg-[#fff] py-4 w-5/12 rounded-lg">Cancel</button>
-        <button className="bg-[#7D4AEA] py-4 w-5/12 rounded-lg">Continue</button>
+    <div style={{ color: colors.color2, backgroundColor: colors.color1 }} className={`${styles.modal0} ${size === 'small' ? styles.small : size === 'medium' ? styles.medium : styles.large}`}>
+      <button className={styles.closeBtn}>{closeBtn}</button>
+      {logo.length < 1 || logo === 'default' ? logoSvg : <img src={logo} alt="logo" />}
+      <h3>{contents.content1}</h3>
+      <h5>{contents.content2}</h5>
+      <input type="text" placeholder={contents.content3} />
+      <div className={styles.btnGroup}>
+        <button style={{ color: colors.color2, backgroundColor: 'rgba(0, 0, 0, 0.1)' }} className={`border`}>
+          {contents.content4}
+        </button>
+        <button style={{ color: 'rgba(255, 255, 255, 0.9)', backgroundColor: colors.color3 }}>{contents.content5}</button>
       </div>
     </div>
   );
