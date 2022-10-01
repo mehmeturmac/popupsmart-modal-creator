@@ -6,6 +6,14 @@ import { MainContextInterface } from '../../context/@types.main';
 export default function Settings() {
   const { script } = React.useContext(MainContext) as MainContextInterface;
 
+  const [btnName, setBtnName] = React.useState('Copy the code');
+
+  const handleCopy = () => {
+    navigator.clipboard.writeText(script);
+    setBtnName('Copied!');
+    setTimeout(() => setBtnName('Copy the code'), 1000);
+  };
+
   return (
     <div className={styles.settings}>
       <div className={styles.title}>
@@ -31,7 +39,7 @@ export default function Settings() {
       <button>Get your Code</button>
       <div className={styles.code}>
         <span>{script}</span>
-        <button>Copy the code</button>
+        <button onClick={handleCopy}>{btnName}</button>
       </div>
       <p>
         <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">

@@ -65,8 +65,14 @@
       img {
         @apply w-20 h-20;
       }
-      span span {
-        @apply text-[#7D4AEA] font-semibold underline;
+      span {
+        @apply flex items-center space-x-1;
+        p {
+          @apply flex;
+          span {
+            @apply text-[#7D4AEA] font-semibold underline ml-1;
+          }
+        }
       }
     }
   }

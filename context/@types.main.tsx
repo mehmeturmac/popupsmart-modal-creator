@@ -13,6 +13,13 @@ export interface MainContextInterface {
   setContents: (value: any) => void;
   image: string;
   setImage: (value: string) => void;
+  device: string;
+  setDevice: (value: string) => void;
+  afterXSec: number;
+  setAfterXSec: (value: number) => void;
+  afterScroll: number;
+  setAfterScroll: (value: number) => void;
+  languages: string[];
+  setLanguages: (value: string[]) => void;
   script: string;
-  // setScript: (value: string) => void;
 }

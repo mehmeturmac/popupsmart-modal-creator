@@ -1,5 +1,5 @@
 .modal0 {
-  @apply flex flex-col items-center text-center relative rounded-xl;
+  @apply flex flex-col items-center text-center relative rounded-xl shadow-lg;
   .closeBtn {
     @apply absolute top-3 right-3;
     svg {
@@ -10,7 +10,7 @@
     @apply font-bold;
   }
   input {
-    @apply rounded-lg w-full;
+    @apply rounded-lg w-full bg-white text-black placeholder:text-gray-500 border-gray-300;
   }
   .btnGroup {
     @apply space-x-3 w-full flex justify-center;

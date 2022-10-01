@@ -27,33 +27,65 @@ function Pop() {
 
   let colors = { color1: '#FFFFFF', color2: '#000000', color3: '#7D4AEA' };
 
-  let appearance = { size: 'medium', position: '9', logo: logoSvg, device: 'everywhere' };
+  let appearance = { size: 'medium', position: '4', logo: logoSvg, afterXSec: 0, afterScroll: 0 };
 
   let createPopUp = function () {
     if (typeof conDivObj === 'undefined') {
       conDivObj = document.createElement('DIV');
       conDivObj.setAttribute('id', 'modal0');
     }
-    if (appearance.position === '8') {
-      conDivObj.style.left = 'unset';
-      conDivObj.style.right = 0;
-      conDivObj.style.alignItems = 'flex-end';
-    } else if (appearance.position === '6') {
-      conDivObj.style.right = 'unset';
+
+    // Positions
+    if (appearance.position === '0') {
       conDivObj.style.left = 0;
-      conDivObj.style.alignItems = 'flex-start';
+      conDivObj.style.top = 0;
+    } else if (appearance.position === '1') {
+      conDivObj.style.left = '50%';
+      conDivObj.style.top = 0;
+      conDivObj.style.transform = 'translate(-50%)';
+      conDivObj.style.marginLeft = 0;
+    } else if (appearance.position === '2') {
+      conDivObj.style.right = 0;
+      conDivObj.style.top = 0;
+    } else if (appearance.position === '3') {
+      conDivObj.style.left = 0;
+      conDivObj.style.top = '50%';
+      conDivObj.style.transform = 'translate(0, -50%)';
+      conDivObj.style.marginTop = 0;
+    } else if (appearance.position === '4') {
+      conDivObj.style.left = '50%';
+      conDivObj.style.top = '50%';
+      conDivObj.style.transform = 'translate(-50%, -50%)';
+      conDivObj.style.margin = 0;
+    } else if (appearance.position === '5') {
+      conDivObj.style.right = 0;
+      conDivObj.style.top = '50%';
+      conDivObj.style.transform = 'translate(0, -50%)';
+      conDivObj.style.marginTop = 0;
+    } else if (appearance.position === '6') {
+      conDivObj.style.left = 0;
+      conDivObj.style.bottom = 0;
+    } else if (appearance.position === '7') {
+      conDivObj.style.left = '50%';
+      conDivObj.style.bottom = 0;
+      conDivObj.style.transform = 'translate(-50%)';
+      conDivObj.style.marginLeft = 0;
+    } else if (appearance.position === '8') {
+      conDivObj.style.right = 0;
+      conDivObj.style.bottom = 0;
     }
+
     conDivObj.innerHTML = `
-    <div style="color: ${colors.color2}; background-color: ${colors.color1};" id="modal0-popup" class="modal0-popup ${
+    <div style="color: ${colors.color2}; background-color: ${colors.color1};" id="modal0-popup" class="modal0-popup hide ${
       appearance.size === 'small' ? 'small' : appearance.size === 'medium' ? 'medium' : 'large'
     }">
-      <button class="closeBtn">${closeBtn}</button>
+      <button class="closeBtn" id="closeBtn" >${closeBtn}</button>
       ${appearance.logo.length < 1 || appearance.logo === 'default' ? logoSvg : `<img src=${appearance.logo} alt="logo" />`}
       <h3>${contents.content1}</h3>
       <h5>${contents.content2}</h5>
       <input type="text" placeholder="${contents.content3}" />
       <div class="btnGroup">
-        <button style="color: ${colors.color2}; background-color: rgba(0, 0, 0, 0.1); border-style: solid; border-width: 1px">
+        <button id="closeBtn2" style="color: ${colors.color2}; background-color: rgba(0, 0, 0, 0.1); border-style: solid; border-width: 1px">
           ${contents.content4}
         </button>
         <button style="color: rgba(255, 255, 255, 0.9); background-color: ${colors.color3}">${contents.content5}</button>
@@ -61,16 +93,45 @@ function Pop() {
     </div>
     `;
     document.body.appendChild(conDivObj);
+
+    function actions() {
+      const closeBtn = document.getElementById('closeBtn');
+      const closeBtn2 = document.getElementById('closeBtn2');
+      const popup = document.getElementById('modal0-popup').classList;
+      closeBtn.addEventListener('click', () => popup.add('hide'));
+      closeBtn2.addEventListener('click', () => popup.add('hide'));
+
+      // ÖNEMLİİİİİİİİİİİİİİİİİİİİİİİİİİİİİİİİİİİİİİİİİİİİİİİİİİİİİİİİİİİİİİİİİİİİİİİİİ
+      var userLang = navigator.language || navigator.userLanguage;
+      console.log(userLang);
+      console.log(document.referrer);
+      // ÖNEMLİİİİİİİİİİİİİİİİİİİİİİİİİİİİİİİİİİİİİİİİİİİİİİİİİİİİİİİİİİİİİİİİİİİİİİİİİ
+
+      if (appearance.afterScroll > 0) {
+        var myScrollFunc = function () {
+          if (window.scrollY < (window.innerHeight * appearance.afterScroll) / 100) {
+            popup.add('hide');
+          } else {
+            popup.remove('hide');
+          }
+        };
+        window.addEventListener('scroll', myScrollFunc);
+      } else {
+        setTimeout(() => popup.remove('hide'), appearance.afterXSec * 1000);
+      }
+    }
+    actions();
   };
   this.init = function (param) {
     if (typeof param === 'object') {
       if ('size' in param) appearance.size = param.size;
       if ('position' in param) appearance.position = param.position;
       if ('logo' in param && param.logo !== null) appearance.logo = param.logo;
-      if ('logo' in param && param.logo === null) appearance.logo = logoSvg;
-      if ('device' in param) appearance.device = param.device;
       if ('colors' in param) colors = param.colors;
       if ('contents' in param) contents = param.contents;
+      if ('afterXSec' in param) appearance.afterXSec = param.afterXSec;
+      if ('afterScroll' in param) appearance.afterScroll = param.afterScroll;
+
       if (typeof window != 'undefined') {
         if (param.device === 'mobile' && window.innerWidth <= 720) {
           createPopUp();

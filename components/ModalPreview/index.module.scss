@@ -1,6 +1,6 @@
 .modalPreview {
   @apply flex flex-col items-center col-span-2 order-first lg:order-last p-5;
   & > div {
-    @apply sticky top-5 border-2 shadow-lg;
+    @apply sticky top-5 border-2;
   }
 }

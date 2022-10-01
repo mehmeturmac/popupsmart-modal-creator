@@ -16,10 +16,37 @@
     }
     label {
       @apply inline-flex relative items-center mb-5 cursor-pointer;
+      div {
+        @apply w-9 h-5 rounded-full bg-gray-200 dark:bg-gray-700 after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-4 after:w-4 after:transition-all;
+      }
     }
   }
   .textBox {
     @apply w-full px-3 py-2 border-2 rounded-lg;
+  }
+  .dropDownList div {
+    @apply flex flex-col py-2 border rounded-lg shadow-lg;
+    label {
+      @apply w-full space-x-2 px-5 hover:bg-[#F5F5F5];
+    }
+  }
+  .dropDown {
+    @apply flex justify-between items-center w-full px-1 border-2 rounded-lg;
+    .dropDownBtn {
+      @apply w-11/12 py-1 overflow-hidden flex items-center;
+      button {
+        @apply bg-[#EAEAEA] pl-3 pr-2 py-1 rounded-md flex items-center mr-1 z-10;
+        svg {
+          @apply ml-1;
+        }
+      }
+      label {
+        @apply text-[#777777] w-full py-1 px-2;
+      }
+    }
+    .svgBtn {
+      @apply w-1/12 flex justify-center;
+    }
   }
   .selectDevice {
     @apply flex justify-between space-x-4;
@@ -28,6 +55,14 @@
       input {
         @apply accent-[#7D4AEA] w-4 h-4;
       }
+      span {
+        @apply flex items-center space-x-2;
+      }
     }
+  }
+  .disabledDiv {
+    pointer-events: none;
+    opacity: 0.7;
+    background-color: rgba(239, 239, 239, 0.3);
   }
 }
