@@ -62,8 +62,8 @@ export default function Content() {
       <div className={`${styles.image} ${!image ? ' hidden' : ''}`}>
         <h5>Upload Image</h5>
         <div className={styles.dropzone} onDrop={(e) => handleDrop(e)} onDragOver={(e) => e.preventDefault()}>
-          <input id="imgSelect" type="file" className={styles.files} onChange={(e) => handleUpload(e)} />
-          <label htmlFor="imgSelect">
+          <input id="imgSelect2" type="file" className={styles.files} onChange={(e) => handleUpload(e)} />
+          <label htmlFor="imgSelect2">
             {image ? <img src={image} alt="logo" /> : imgSvg}
             <span>
               <svg width="18" height="12" viewBox="0 0 18 12" fill="none" xmlns="http://www.w3.org/2000/svg">

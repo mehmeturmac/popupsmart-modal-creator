@@ -4,9 +4,9 @@ import { MainContext } from '../../context/mainContext';
 import { MainContextInterface } from '../../context/@types.main';
 
 export default function Settings() {
-  const { script } = React.useContext(MainContext) as MainContextInterface;
+  const { webHook, setWebHook, script } = React.useContext(MainContext) as MainContextInterface;
 
-  const [btnName, setBtnName] = React.useState('Copy the code');
+  const [btnName, setBtnName] = React.useState<string>('Copy the code');
 
   const handleCopy = () => {
     navigator.clipboard.writeText(script);
@@ -22,21 +22,24 @@ export default function Settings() {
       </div>
       <h5>Webhook to Send data</h5>
       <h6>
-        Enter youe Webhook URL
+        Enter your Webhook URL
         <p>
-          You can create a simple one with <span>make.com</span>
+          You can create a simple one with
+          <a href="https://www.make.com" target="_blank">
+            make.com
+          </a>
         </p>
       </h6>
-      <input type="text" placeholder="Your Webhook URL" />
+      <input type="text" placeholder="Your Webhook URL" value={webHook.url.length === 0 ? '' : webHook.url} onChange={(e) => setWebHook({ ...webHook, url: e.target.value })} />
       <label htmlFor="check1">
-        <input type="checkbox" id="check1" />
+        <input type="checkbox" id="check1" checked={webHook.sendForm} onChange={() => setWebHook({ ...webHook, sendForm: !webHook.sendForm })} disabled={!webHook.url} />
         <span>Send form submissions</span>
       </label>
       <label htmlFor="check2">
-        <input type="checkbox" id="check2" />
+        <input type="checkbox" id="check2" checked={webHook.sendClick} onChange={() => setWebHook({ ...webHook, sendClick: !webHook.sendClick })} disabled={!webHook.url} />
         <span>Send click data</span>
       </label>
-      <button>Get your Code</button>
+      <button onClick={handleCopy}>{btnName === 'Copy the code' ? 'Get your Code' : btnName}</button>
       <div className={styles.code}>
         <span>{script}</span>
         <button onClick={handleCopy}>{btnName}</button>

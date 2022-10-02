@@ -1,0 +1,78 @@
+.modal1 {
+  @apply flex flex-col items-center text-center relative rounded-xl shadow-lg;
+  .closeBtn {
+    @apply absolute top-3 right-3;
+    svg {
+      @apply w-7 h-7;
+    }
+  }
+  img {
+    @apply w-full rounded-t-xl;
+  }
+  div {
+    @apply w-full flex flex-col items-center py-5;
+    h3 {
+      @apply font-bold;
+    }
+    .btnGroup {
+      @apply w-5/6 flex flex-col space-y-3;
+      button {
+        @apply w-full rounded-lg;
+      }
+    }
+  }
+}
+
+.small {
+  @apply h-[400px] w-[320px];
+  img {
+    @apply h-48;
+  }
+  div {
+    @apply space-y-1 py-3;
+    h3 {
+      @apply text-lg;
+    }
+    .btnGroup button {
+      @apply py-2;
+    }
+  }
+}
+
+.medium {
+  @apply h-[600px] w-[480px];
+  img {
+    @apply h-80;
+  }
+  div {
+    @apply space-y-3 py-4;
+    h3 {
+      @apply text-3xl;
+    }
+    h5 {
+      @apply text-2xl;
+    }
+    .btnGroup button {
+      @apply py-4 text-xl;
+    }
+  }
+}
+
+.large {
+  @apply h-[700px] w-[560px];
+  img {
+    @apply h-96;
+  }
+  div {
+    @apply space-y-3 py-4;
+    h3 {
+      @apply text-5xl;
+    }
+    h5 {
+      @apply text-3xl;
+    }
+    .btnGroup button {
+      @apply py-6 text-3xl;
+    }
+  }
+}

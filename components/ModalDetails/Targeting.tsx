@@ -3,20 +3,19 @@ import * as React from 'react';
 import { MainContext } from '../../context/mainContext';
 import { MainContextInterface } from '../../context/@types.main';
 
-const styledDiv = (
-  <div className="w-9 h-5 rounded-full bg-gray-200 dark:bg-gray-700 peer peer-checked:bg-[#7D4AEA] peer-checked:after:translate-x-full after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-4 after:w-4 after:transition-all" />
-);
+const langObj: any = { en: 'English', fr: 'French', de: 'German', pl: 'Polish', nl: 'Ducth', fi: 'Finnish', tr: 'Turkish' };
 
 export default function Targeting() {
-  const { device, setDevice, setAfterXSec, setAfterScroll, languages, setLanguages } = React.useContext(MainContext) as MainContextInterface;
+  const { device, setDevice, afterXSec, setAfterXSec, afterScroll, setAfterScroll, trafficSource, setTrafficSource, languages, setLanguages, exitIntent, setExitIntent } = React.useContext(
+    MainContext
+  ) as MainContextInterface;
 
   // Checkboxes
-  const [deviceCheck, setDeviceCheck] = React.useState(false);
-  const [afterXSecCheck, setAfterXSecCheck] = React.useState(false);
-  const [afterScrollCheck, setAfterScrollCheck] = React.useState(false);
-  const [trafficSourceCheck, setTrafficSourceCheck] = React.useState(false);
-  const [browserLanguageCheck, setBrowserLanguageCheck] = React.useState(false);
-  const [exitIntentCheck, setExitIntentCheck] = React.useState(false);
+  const [deviceCheck, setDeviceCheck] = React.useState<boolean>(false);
+  const [afterXSecCheck, setAfterXSecCheck] = React.useState<boolean>(false);
+  const [afterScrollCheck, setAfterScrollCheck] = React.useState<boolean>(false);
+  const [trafficSourceCheck, setTrafficSourceCheck] = React.useState<boolean>(false);
+  const [browserLanguageCheck, setBrowserLanguageCheck] = React.useState<boolean>(false);
 
   React.useEffect(() => {
     deviceCheck ? setDevice('desktop') : setDevice('everywhere');
@@ -29,6 +28,10 @@ export default function Targeting() {
   React.useEffect(() => {
     setAfterScroll(0);
   }, [afterScrollCheck]);
+
+  React.useEffect(() => {
+    setTrafficSource('');
+  }, [trafficSourceCheck]);
 
   React.useEffect(() => {
     setLanguages([]);
@@ -46,7 +49,7 @@ export default function Targeting() {
     }
     setLanguages(updatedList);
   };
-  const handleCheckRemove = (lang: any) => {
+  const handleCheckRemove = (lang: string) => {
     var updatedList = [...languages];
     updatedList.splice(languages.indexOf(lang), 1);
     setLanguages(updatedList);
@@ -66,7 +69,7 @@ export default function Targeting() {
           <h5>Visitor Device</h5>
           <label htmlFor="deviceCheckbox">
             <input type="checkbox" id="deviceCheckbox" className="sr-only peer" onChange={() => setDeviceCheck(!deviceCheck)} />
-            {styledDiv}
+            <div className="peer peer-checked:bg-[#7D4AEA] peer-checked:after:translate-x-full" />
           </label>
         </div>
         <div className={styles.selectDevice}>
@@ -91,7 +94,7 @@ export default function Targeting() {
                   fill="#999999"
                 />
               </svg>
-              <p>Mobile</p>{' '}
+              <p>Mobile</p>
             </span>
           </label>
         </div>
@@ -104,11 +107,10 @@ export default function Targeting() {
           <h5>After X seconds</h5>
           <label htmlFor="afterXSecCheckbox">
             <input type="checkbox" id="afterXSecCheckbox" className="sr-only peer" onChange={() => setAfterXSecCheck(!afterXSecCheck)} />
-            {/* {styledDiv} */}
             <div className="peer peer-checked:bg-[#7D4AEA] peer-checked:after:translate-x-full" />
           </label>
         </div>
-        <input type="number" placeholder="12" className={styles.textBox} onChange={(e) => setAfterXSec(Number(e.target.value))} disabled={!afterXSecCheck} />
+        <input type="number" placeholder="12" className={styles.textBox} value={afterXSec === 0 ? '' : afterXSec} onChange={(e) => setAfterXSec(Number(e.target.value))} disabled={!afterXSecCheck} />
       </div>
 
       {/* After % Scroll */}
@@ -118,10 +120,17 @@ export default function Targeting() {
           <h5>After % Scroll</h5>
           <label htmlFor="afterScrollCheckbox">
             <input type="checkbox" id="afterScrollCheckbox" className="sr-only peer" onChange={() => setAfterScrollCheck(!afterScrollCheck)} />
-            {styledDiv}
+            <div className="peer peer-checked:bg-[#7D4AEA] peer-checked:after:translate-x-full" />
           </label>
         </div>
-        <input type="number" placeholder="50" className={styles.textBox} onChange={(e) => setAfterScroll(Number(e.target.value))} disabled={!afterScrollCheck} />
+        <input
+          type="number"
+          placeholder="50"
+          className={styles.textBox}
+          value={afterScroll === 0 ? '' : afterScroll}
+          onChange={(e) => setAfterScroll(Number(e.target.value))}
+          disabled={!afterScrollCheck}
+        />
       </div>
 
       {/* Traffic Source */}
@@ -131,10 +140,17 @@ export default function Targeting() {
           <h5>Traffic Source</h5>
           <label htmlFor="trafficSourceCheckbox">
             <input type="checkbox" id="trafficSourceCheckbox" className="sr-only peer" onChange={() => setTrafficSourceCheck(!trafficSourceCheck)} />
-            {styledDiv}
+            <div className="peer peer-checked:bg-[#7D4AEA] peer-checked:after:translate-x-full" />
           </label>
         </div>
-        <input type="text" placeholder="Enter your traffic source domain" className={styles.textBox} />
+        <input
+          type="text"
+          placeholder="Enter your traffic source domain"
+          className={styles.textBox}
+          value={trafficSource}
+          onChange={(e) => setTrafficSource(e.target.value)}
+          disabled={!trafficSourceCheck}
+        />
       </div>
 
       {/* Browser Language */}
@@ -144,7 +160,7 @@ export default function Targeting() {
           <h5>Browser Language</h5>
           <label htmlFor="browserLanguageCheckbox">
             <input type="checkbox" id="browserLanguageCheckbox" className="sr-only peer" onChange={() => setBrowserLanguageCheck(!browserLanguageCheck)} />
-            {styledDiv}
+            <div className="peer peer-checked:bg-[#7D4AEA] peer-checked:after:translate-x-full" />
           </label>
         </div>
         <div className={styles.dropDown + ` ${!browserLanguageCheck ? styles.disabledDiv : null}`}>
@@ -152,7 +168,7 @@ export default function Targeting() {
             {languages.length === 0 && <label htmlFor="dropDownID">Select</label>}
             {languages.map((x: any, i: any) => (
               <button key={i} onClick={() => handleCheckRemove(x)}>
-                {x}
+                {langObj[x]}
                 <svg width="8" height="8" viewBox="0 0 8 8" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M7.5 6.515L6.515 7.5L4 4.985L1.485 7.5L0.5 6.515L3.015 4L0.5 1.485L1.485 0.5L4 3.015L6.515 0.5L7.5 1.485L4.985 4L7.5 6.515Z" fill="black" />
                 </svg>
@@ -167,10 +183,10 @@ export default function Targeting() {
         </div>
         <div className={styles.dropDownList} hidden={dropDown}>
           <div>
-            {['English', 'French', 'German', 'Polish', 'Ducth', 'Finnish', 'Turkish'].map((x, i) => (
-              <label htmlFor={x} key={i}>
-                <input type="checkbox" id={x} checked={languages.includes(x)} onChange={handleCheck} />
-                <span>{x}</span>
+            {Object.keys(langObj).map((key, i) => (
+              <label htmlFor={key} key={i}>
+                <input type="checkbox" id={key} checked={languages.includes(key)} onChange={handleCheck} />
+                <span>{langObj[key]}</span>
               </label>
             ))}
           </div>
@@ -183,8 +199,8 @@ export default function Targeting() {
         <div className={styles.subtitle}>
           <h5>Exit Intent Targeting</h5>
           <label htmlFor="exitIntentCheckbox">
-            <input type="checkbox" id="exitIntentCheckbox" className="sr-only peer" onChange={() => setExitIntentCheck(!exitIntentCheck)} />
-            {styledDiv}
+            <input type="checkbox" id="exitIntentCheckbox" className="sr-only peer" onChange={() => setExitIntent(!exitIntent)} />
+            <div className="peer peer-checked:bg-[#7D4AEA] peer-checked:after:translate-x-full" />
           </label>
         </div>
       </div>

@@ -60,7 +60,7 @@ export default function Appearance() {
         <div className={styles.sizeGroup} role="group">
           {['small', 'medium', 'large'].map((x, i) => (
             <div key={i}>
-              <input type="radio" id={`size${i}`} name="sizeGroup" defaultChecked={x === size ? true : false} onClick={() => setSize(x)} />
+              <input type="radio" id={`size${i}`} name="sizeGroup" checked={x === size ? true : false} onClick={() => setSize(x)} />
               <label htmlFor={`size${i}`}>{x[0].toUpperCase() + x.slice(1)}</label>
             </div>
           ))}
@@ -71,7 +71,7 @@ export default function Appearance() {
         <div className={styles.positionGroup} role="group2">
           {[...Array(9)].map((x, i) => (
             <label key={i}>
-              <input type="radio" id={`position${i}`} name="positionGroup" defaultChecked={i === position ? true : false} onClick={() => setPosition(i)} />
+              <input type="radio" id={`position${i}`} name="positionGroup" checked={i === position ? true : false} onClick={() => setPosition(i)} />
               <span></span>
             </label>
           ))}

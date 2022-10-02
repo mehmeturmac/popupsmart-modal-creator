@@ -1,5 +1,8 @@
 .card {
   @apply bg-[#F5F5F5] w-[276px] h-[200px] flex items-center justify-center border rounded-xl relative;
+  img {
+    @apply w-44 h-44 object-contain;
+  }
   span {
     @apply bg-[#7D4AEA]/[.5] w-full h-full opacity-0 rounded-xl absolute;
   }

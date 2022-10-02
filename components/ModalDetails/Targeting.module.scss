@@ -24,12 +24,6 @@
   .textBox {
     @apply w-full px-3 py-2 border-2 rounded-lg;
   }
-  .dropDownList div {
-    @apply flex flex-col py-2 border rounded-lg shadow-lg;
-    label {
-      @apply w-full space-x-2 px-5 hover:bg-[#F5F5F5];
-    }
-  }
   .dropDown {
     @apply flex justify-between items-center w-full px-1 border-2 rounded-lg;
     .dropDownBtn {
@@ -46,6 +40,15 @@
     }
     .svgBtn {
       @apply w-1/12 flex justify-center;
+    }
+  }
+  .dropDownList div {
+    @apply flex flex-col py-2 border rounded-lg shadow-lg;
+    label {
+      @apply inline-flex items-center w-full space-x-2 px-5 py-1 hover:bg-[#F5F5F5];
+      input {
+        @apply accent-[#7D4AEA] w-4 h-4;
+      }
     }
   }
   .selectDevice {

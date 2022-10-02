@@ -1,0 +1,169 @@
+@import 'https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap';
+#modal1 {
+  position: fixed;
+  z-index: 9999999;
+  margin: 40px;
+}
+
+.modal1-popup {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  border-radius: 0.75rem;
+  box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  opacity: 1;
+  transition: opacity 0.5s;
+}
+
+.hide {
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.5s, visibility 0.5s;
+}
+
+.modal1-popup .closeBtn {
+  position: absolute;
+  top: 0.75rem;
+  right: 0.75rem;
+}
+
+.modal1-popup .closeBtn svg {
+  width: 1.75rem;
+  height: 1.75rem;
+}
+
+.modal1-popup img {
+  width: 100%;
+  border-top-left-radius: 0.75rem;
+  border-top-right-radius: 0.75rem;
+}
+
+.modal1-popup div {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 1.25rem;
+  padding-bottom: 1.25rem;
+}
+
+.modal1-popup div h3 {
+  font-weight: 700;
+}
+
+.modal1-popup div .btnGroup {
+  width: 83%;
+  display: flex;
+  flex-direction: column;
+}
+
+.modal1-popup div .btnGroup button {
+  width: 100%;
+  border-radius: 0.5rem;
+  margin-top: 0.75rem;
+}
+
+.small {
+  height: 400px;
+  width: 320px;
+}
+
+.small img {
+  height: 12rem;
+}
+
+.small div {
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+}
+
+.small div h3 {
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+  margin-top: 0.25rem;
+}
+
+.small div .btnGroup {
+  margin-top: 0.75rem;
+}
+
+.small div .btnGroup button {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+
+.medium {
+  height: 600px;
+  width: 480px;
+}
+
+.medium img {
+  height: 20rem;
+}
+
+.medium div {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+.medium div h3 {
+  font-size: 1.875rem;
+  line-height: 2.25rem;
+  margin-top: 0.75rem;
+}
+
+.medium div h5 {
+  font-size: 1.5rem;
+  line-height: 2rem;
+  margin-top: 0.75rem;
+}
+
+.medium div .btnGroup {
+  margin-top: 0.75rem;
+}
+
+.medium div .btnGroup button {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+}
+
+.large {
+  height: 700px;
+  width: 560px;
+}
+
+.large img {
+  height: 24rem;
+}
+
+.large div {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+.large div h3 {
+  font-size: 3rem;
+  line-height: 1;
+  margin-top: 0.75rem;
+}
+
+.large div h5 {
+  font-size: 1.875rem;
+  line-height: 2.25rem;
+  margin-top: 0.75rem;
+}
+
+.large div .btnGroup {
+  margin-top: 0.75rem;
+}
+
+.large div .btnGroup button {
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+  font-size: 1.875rem;
+  line-height: 2.25rem;
+}
