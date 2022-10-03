@@ -8,7 +8,7 @@
   }
   .right {
     @apply hidden lg:flex items-center space-x-7 p-2;
-    button {
+    .button {
       @apply bg-[#7D4AEA] text-white px-5 py-2 rounded-xl shadow-lg;
     }
   }
@@ -21,5 +21,8 @@
   @apply lg:hidden flex flex-col text-center font-semibold border-b-2;
   a {
     @apply p-4 hover:bg-[#7D4AEA] hover:text-white w-full;
+  }
+  .button {
+    @apply bg-[#7D4AEA] text-white px-5 py-2 rounded-xl shadow-lg;
   }
 }

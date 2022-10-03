@@ -24,11 +24,12 @@ const logoSvg = (
 );
 
 export default function Modal0() {
-  const { size, colors, logo, setLogo, contents, setContents } = React.useContext(MainContext) as MainContextInterface;
+  const { size, colors, logo, setLogo, setImage, contents, setContents } = React.useContext(MainContext) as MainContextInterface;
 
   React.useEffect(() => {
     setContents({ content1: 'Security Code', content2: 'This code expires in 24 hours', content3: 'Code', content4: 'Cancel', content5: 'Continue' });
     setLogo('default');
+    setImage('');
   }, []);
 
   return (

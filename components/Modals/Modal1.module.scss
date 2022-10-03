@@ -24,7 +24,7 @@
 }
 
 .small {
-  @apply h-[400px] w-[320px];
+  @apply max-h-[400px] max-w-[320px];
   img {
     @apply h-48;
   }
@@ -40,7 +40,7 @@
 }
 
 .medium {
-  @apply h-[600px] w-[480px];
+  @apply max-h-[600px] max-w-[480px];
   img {
     @apply h-80;
   }
@@ -59,7 +59,7 @@
 }
 
 .large {
-  @apply h-[700px] w-[560px];
+  @apply max-h-[700px] max-w-[560px];
   img {
     @apply h-96;
   }

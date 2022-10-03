@@ -4,8 +4,8 @@ import { MainContext } from '../../context/mainContext';
 import { MainContextInterface } from '../../context/@types.main';
 
 // Modals
-function loadModals(name: any) {
-  return React.lazy(() => import(`../Modals/Modal${name}.tsx`));
+function loadModals(id: any) {
+  return React.lazy(() => import(`../Modals/Modal${id}.tsx`));
 }
 
 export default function ModalPreview() {

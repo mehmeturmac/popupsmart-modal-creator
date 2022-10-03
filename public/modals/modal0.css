@@ -69,8 +69,8 @@
 
 .small {
   padding: 1.25rem;
-  height: 300px;
-  width: 280px;
+  max-height: 300px;
+  max-width: 280px;
 }
 
 .small img,
@@ -99,8 +99,8 @@ svg {
 
 .medium {
   padding: 2.5rem;
-  height: 480px;
-  width: 446px;
+  max-height: 480px;
+  max-width: 446px;
 }
 
 .medium img,
@@ -139,8 +139,8 @@ svg {
 
 .large {
   padding: 4rem;
-  height: 640px;
-  width: 600px;
+  max-height: 640px;
+  max-width: 600px;
 }
 
 .large img,

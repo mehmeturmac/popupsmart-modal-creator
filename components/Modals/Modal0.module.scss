@@ -21,7 +21,7 @@
 }
 
 .small {
-  @apply p-5 space-y-3 h-[300px] w-[280px];
+  @apply p-5 space-y-3 max-h-[300px] max-w-[280px];
   img,
   svg {
     @apply w-16 h-16;
@@ -38,7 +38,7 @@
 }
 
 .medium {
-  @apply p-10 space-y-6 h-[480px] w-[446px];
+  @apply p-10 space-y-6 max-h-[480px] max-w-[446px];
   img,
   svg {
     @apply w-24 h-24;
@@ -58,7 +58,7 @@
 }
 
 .large {
-  @apply p-16 space-y-6 h-[640px] w-[600px];
+  @apply p-16 space-y-6 max-h-[640px] max-w-[600px];
   img,
   svg {
     @apply w-36 h-36;

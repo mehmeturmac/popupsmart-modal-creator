@@ -68,7 +68,7 @@ export default function Targeting() {
         <div className={styles.subtitle}>
           <h5>Visitor Device</h5>
           <label htmlFor="deviceCheckbox">
-            <input type="checkbox" id="deviceCheckbox" className="sr-only peer" onChange={() => setDeviceCheck(!deviceCheck)} />
+            <input type="checkbox" id="deviceCheckbox" className="sr-only peer" onChange={() => setDeviceCheck((prev) => !prev)} />
             <div className="peer peer-checked:bg-[#7D4AEA] peer-checked:after:translate-x-full" />
           </label>
         </div>
@@ -106,7 +106,7 @@ export default function Targeting() {
         <div className={styles.subtitle}>
           <h5>After X seconds</h5>
           <label htmlFor="afterXSecCheckbox">
-            <input type="checkbox" id="afterXSecCheckbox" className="sr-only peer" onChange={() => setAfterXSecCheck(!afterXSecCheck)} />
+            <input type="checkbox" id="afterXSecCheckbox" className="sr-only peer" onChange={() => setAfterXSecCheck((prev) => !prev)} />
             <div className="peer peer-checked:bg-[#7D4AEA] peer-checked:after:translate-x-full" />
           </label>
         </div>
@@ -119,7 +119,7 @@ export default function Targeting() {
         <div className={styles.subtitle}>
           <h5>After % Scroll</h5>
           <label htmlFor="afterScrollCheckbox">
-            <input type="checkbox" id="afterScrollCheckbox" className="sr-only peer" onChange={() => setAfterScrollCheck(!afterScrollCheck)} />
+            <input type="checkbox" id="afterScrollCheckbox" className="sr-only peer" onChange={() => setAfterScrollCheck((prev) => !prev)} />
             <div className="peer peer-checked:bg-[#7D4AEA] peer-checked:after:translate-x-full" />
           </label>
         </div>
@@ -139,7 +139,7 @@ export default function Targeting() {
         <div className={styles.subtitle}>
           <h5>Traffic Source</h5>
           <label htmlFor="trafficSourceCheckbox">
-            <input type="checkbox" id="trafficSourceCheckbox" className="sr-only peer" onChange={() => setTrafficSourceCheck(!trafficSourceCheck)} />
+            <input type="checkbox" id="trafficSourceCheckbox" className="sr-only peer" onChange={() => setTrafficSourceCheck((prev) => !prev)} />
             <div className="peer peer-checked:bg-[#7D4AEA] peer-checked:after:translate-x-full" />
           </label>
         </div>
@@ -159,7 +159,7 @@ export default function Targeting() {
         <div className={styles.subtitle}>
           <h5>Browser Language</h5>
           <label htmlFor="browserLanguageCheckbox">
-            <input type="checkbox" id="browserLanguageCheckbox" className="sr-only peer" onChange={() => setBrowserLanguageCheck(!browserLanguageCheck)} />
+            <input type="checkbox" id="browserLanguageCheckbox" className="sr-only peer" onChange={() => setBrowserLanguageCheck((prev) => !prev)} />
             <div className="peer peer-checked:bg-[#7D4AEA] peer-checked:after:translate-x-full" />
           </label>
         </div>

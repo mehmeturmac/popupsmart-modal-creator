@@ -45,34 +45,6 @@ export const MainProvider: React.FC<Props> = ({ children }) => {
     );
   }, [modalID, size, position, logo, colors, contents, image, device, afterXSec, afterScroll, trafficSource, languages, exitIntent, webHook]);
 
-  // Reset Context
-  const resetContext = () => {
-    // Appearance
-    setSize('medium');
-    setPosition(4);
-    setLogo('');
-    setColors({ color1: '#FFFFFF', color2: '#000000', color3: '#7D4AEA' });
-
-    // Content
-    setContents({ content: 'Test' });
-    setImage('');
-
-    // Targeting Rules
-    setDevice('everywhere');
-    setAfterXSec(0);
-    setAfterScroll(0);
-    setTrafficSource('');
-    setLanguages([]);
-    setExitIntent(false);
-
-    // Settings and Code
-    setWebHook({ url: '', sendForm: true, sendClick: false });
-  };
-
-  React.useEffect(() => {
-    resetContext();
-  }, [modalID]);
-
   const values = {
     modalID,
     setModalID,

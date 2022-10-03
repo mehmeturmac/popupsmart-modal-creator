@@ -66,8 +66,8 @@
 }
 
 .small {
-  height: 400px;
-  width: 320px;
+  max-height: 400px;
+  max-width: 320px;
 }
 
 .small img {
@@ -85,18 +85,14 @@
   margin-top: 0.25rem;
 }
 
-.small div .btnGroup {
-  margin-top: 0.75rem;
-}
-
 .small div .btnGroup button {
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
 }
 
 .medium {
-  height: 600px;
-  width: 480px;
+  max-height: 600px;
+  max-width: 480px;
 }
 
 .medium img {
@@ -120,10 +116,6 @@
   margin-top: 0.75rem;
 }
 
-.medium div .btnGroup {
-  margin-top: 0.75rem;
-}
-
 .medium div .btnGroup button {
   padding-top: 1rem;
   padding-bottom: 1rem;
@@ -132,8 +124,8 @@
 }
 
 .large {
-  height: 700px;
-  width: 560px;
+  max-height: 700px;
+  max-width: 560px;
 }
 
 .large img {
@@ -154,10 +146,6 @@
 .large div h5 {
   font-size: 1.875rem;
   line-height: 2.25rem;
-  margin-top: 0.75rem;
-}
-
-.large div .btnGroup {
   margin-top: 0.75rem;
 }
 

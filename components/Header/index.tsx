@@ -52,7 +52,7 @@ export default function Header() {
               </p>
             </div>
             <div className={styles.right}>
-              <Image src="/image-1.png" width="400px" height="479px" className={styles.image} />
+              <Image src="/image-1.png" width="400px" height="479px" className={styles.image} priority />
               <h6>Mediterranean Sneakers®</h6>
               <button>X</button>
             </div>

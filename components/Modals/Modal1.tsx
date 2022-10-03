@@ -14,11 +14,12 @@ const closeBtn = (
 );
 
 export default function Modal0() {
-  const { size, colors, image, setImage, contents, setContents } = React.useContext(MainContext) as MainContextInterface;
+  const { size, colors, image, setImage, setLogo, contents, setContents } = React.useContext(MainContext) as MainContextInterface;
 
   React.useEffect(() => {
     setContents({ content1: 'Install local now', content2: 'We’ve gone native, try it!', content3: 'Continue', content4: 'Not now' });
     setImage('https://thumbsnap.com/i/v32Btvb5.png');
+    setLogo('');
   }, []);
 
   return (
