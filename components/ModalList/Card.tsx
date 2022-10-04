@@ -8,10 +8,14 @@ export default function Card({ id }: any) {
   return (
     <div className={styles.card}>
       <img src={`/modals/modal${id}.png`} />
-      <span className={id === modalID ? 'opacity-100' : 'opacity-0'}></span>
-      <button className={id === modalID ? 'opacity-100' : 'opacity-0'} onClick={() => setModalID(id)}>
-        {id === modalID ? 'Selected template' : 'Select template'}
-      </button>
+      {id < 12 && (
+        <>
+          <span className={id === modalID ? 'opacity-100' : 'opacity-0'}></span>
+          <button className={id === modalID ? 'opacity-100' : 'opacity-0'} onClick={() => setModalID(id)}>
+            {id === modalID ? 'Selected template' : 'Select template'}
+          </button>
+        </>
+      )}
     </div>
   );
 }
