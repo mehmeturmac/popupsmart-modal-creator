@@ -14,7 +14,7 @@ export default function Header() {
         <main>
           <h1>Simple modal card creator</h1>
           <h4>A utility-first CSS framework packed with classeslike flex, pt-4, text-center and rotate-90 that can becomposed to build any design, directly in your markup.</h4>
-          <button>Try it out now</button>
+          <a href="#container">Try it out now</a>
           <div>
             <span>
               {svgTick}

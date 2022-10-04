@@ -1,0 +1,99 @@
+.modal9 {
+  @apply flex relative rounded-xl shadow-lg;
+  .closeBtn {
+    @apply absolute top-3 right-3;
+    svg {
+      @apply w-7 h-7;
+    }
+  }
+  .left {
+    @apply flex flex-col;
+    h3 {
+      @apply font-bold;
+    }
+    input {
+      @apply rounded-lg bg-white text-black placeholder:text-gray-500 border-gray-300;
+    }
+    .btnGroup button {
+      @apply w-full rounded-lg;
+    }
+    span {
+      @apply flex justify-between;
+      a {
+        @apply text-start cursor-pointer;
+      }
+    }
+  }
+  img {
+    @apply rounded-r-xl;
+  }
+}
+
+.small {
+  @apply max-h-[320px] max-w-[540px];
+  .left {
+    @apply w-[270px] px-5 py-7;
+    h3 {
+      @apply text-2xl;
+    }
+    h5 {
+      @apply text-xl mb-3;
+    }
+    input {
+      @apply border p-2 mt-2 text-base;
+    }
+    .btnGroup button {
+      @apply p-2 mt-5 my-2;
+    }
+    span a {
+      @apply text-sm;
+    }
+  }
+  img {
+    @apply w-[270px];
+  }
+}
+
+.medium {
+  @apply max-h-[440px] max-w-[740px];
+  .left {
+    @apply w-80 px-7 py-10;
+    h3 {
+      @apply text-4xl my-4;
+    }
+    h5 {
+      @apply text-2xl mb-5;
+    }
+    input {
+      @apply border-2 p-2 mt-4;
+    }
+    .btnGroup button {
+      @apply p-3 text-xl mt-7 my-3;
+    }
+  }
+  img {
+    @apply w-80;
+  }
+}
+
+.large {
+  @apply max-h-[520px] max-w-[880px];
+  .left {
+    @apply w-[440px] px-8 py-12;
+    h3 {
+      @apply text-5xl my-3;
+    }
+    h5 {
+      @apply text-3xl;
+    }
+    input {
+      @apply border-2 p-3 mt-3;
+    }
+    .btnGroup button {
+      @apply p-3 text-3xl mt-10 my-5;
+    }
+  }
+  img {
+    @apply w-[440px];
+  }
+}

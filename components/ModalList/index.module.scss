@@ -11,3 +11,19 @@
 .listGrid {
   @apply grid xl:grid-cols-4 lg:grid-cols-3 sm:grid-cols-2 gap-4 py-6;
 }
+
+.pagination {
+  @apply flex rounded-lg shadow-sm bg-[#F5F5F5] p-1 max-w-min mt-2;
+  div {
+    @apply relative overflow-hidden;
+    input {
+      @apply absolute -left-96;
+    }
+    label {
+      @apply flex py-2 px-4 text-[#777] font-semibold hover:bg-[#7D4AEA] hover:text-white rounded-lg cursor-pointer;
+    }
+    input:checked + label {
+      @apply text-black bg-white w-full;
+    }
+  }
+}

@@ -1,4 +1,4 @@
-import styles from './Modal1.module.scss';
+import styles from './Modal4.module.scss';
 import * as React from 'react';
 import { MainContext } from '../../context/mainContext';
 import { MainContextInterface } from '../../context/@types.main';
@@ -13,28 +13,26 @@ const closeBtn = (
   </svg>
 );
 
-export default function Modal1() {
-  const { size, colors, image, setImage, setLogo, contents, setContents } = React.useContext(MainContext) as MainContextInterface;
+export default function Modal4() {
+  const { size, colors, setLogo, setImage, contents, setContents } = React.useContext(MainContext) as MainContextInterface;
 
   React.useEffect(() => {
-    setContents({ content1: 'Install local now', content2: 'We’ve gone native, try it!', content3: 'Continue', content4: 'Not now' });
-    setImage('https://thumbsnap.com/i/v32Btvb5.png');
+    setContents({
+      content1: "The file is on it's way",
+      content2: 'You’ll get an notified when the receiver has opened the email.',
+      content3: 'Go to dashboard',
+    });
     setLogo('');
+    setImage('');
   }, []);
 
   return (
-    <div style={{ color: colors.color2, backgroundColor: colors.color1 }} className={`${styles.modal1} ${size === 'small' ? styles.small : size === 'medium' ? styles.medium : styles.large}`}>
+    <div style={{ color: colors.color2, backgroundColor: colors.color1 }} className={`${styles.modal4} ${size === 'small' ? styles.small : size === 'medium' ? styles.medium : styles.large}`}>
       <button className={styles.closeBtn}>{closeBtn}</button>
-      <img src={image} alt="image" />
-      <div>
-        <h3>{contents.content1}</h3>
-        <h5>{contents.content2}</h5>
-        <div className={styles.btnGroup}>
-          <button style={{ color: 'rgba(255, 255, 255, 0.9)', backgroundColor: colors.color3 }}>{contents.content3}</button>
-          <button style={{ color: colors.color2, backgroundColor: 'rgba(0, 0, 0, 0.1)' }} className={`border`}>
-            {contents.content4}
-          </button>
-        </div>
+      <h3>{contents.content1}</h3>
+      <h5>{contents.content2}</h5>
+      <div className={styles.btnGroup}>
+        <button style={{ color: 'rgba(255, 255, 255, 0.9)', backgroundColor: colors.color3 }}>{contents.content3}</button>
       </div>
     </div>
   );

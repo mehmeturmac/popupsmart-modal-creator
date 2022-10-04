@@ -1,0 +1,82 @@
+.modal8 {
+  @apply flex flex-col items-center text-center relative rounded-xl shadow-lg;
+  .closeBtn {
+    @apply absolute top-3 right-3;
+    svg {
+      @apply w-7 h-7;
+    }
+  }
+  img {
+    @apply w-full rounded-t-xl;
+  }
+  h3 {
+    @apply font-bold;
+  }
+  input {
+    @apply rounded-lg w-5/6 bg-white text-black placeholder:text-gray-500 border-gray-300;
+  }
+  .btnGroup {
+    @apply w-5/6;
+    button {
+      @apply w-full rounded-lg;
+    }
+  }
+
+  a {
+    @apply w-5/6 text-start cursor-pointer underline;
+  }
+}
+
+.small {
+  @apply max-h-[400px] max-w-[320px] pb-3;
+  img {
+    @apply h-48;
+  }
+  h3 {
+    @apply text-lg;
+  }
+  input {
+    @apply border p-1 mt-1;
+  }
+  .btnGroup button {
+    @apply p-1 my-1;
+  }
+}
+
+.medium {
+  @apply max-h-[750px] max-w-[480px] pb-5;
+  img {
+    @apply h-80;
+  }
+  h3 {
+    @apply text-3xl my-3;
+  }
+  h5 {
+    @apply text-2xl;
+  }
+  input {
+    @apply border-2 p-2 mt-3;
+  }
+  .btnGroup button {
+    @apply p-3 text-xl mt-5 my-2;
+  }
+}
+
+.large {
+  @apply max-h-[880px] max-w-[560px] pb-8;
+  img {
+    @apply h-96;
+  }
+  h3 {
+    @apply text-5xl my-3;
+  }
+  h5 {
+    @apply text-3xl;
+  }
+  input {
+    @apply border-2 p-3 mt-3;
+  }
+  .btnGroup button {
+    @apply p-3 text-3xl mt-5 my-2;
+  }
+}

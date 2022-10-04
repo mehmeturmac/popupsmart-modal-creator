@@ -1,0 +1,62 @@
+.modal6 {
+  @apply flex flex-col items-center text-center relative rounded-xl shadow-lg;
+  .closeBtn {
+    @apply absolute top-3 right-3;
+    svg {
+      @apply w-7 h-7;
+    }
+  }
+  h3 {
+    @apply font-bold;
+  }
+  .btnGroup {
+    @apply w-full flex justify-center;
+    button {
+      @apply w-full rounded-lg mx-1;
+    }
+  }
+}
+
+.small {
+  @apply max-h-[160px] max-w-[280px] p-4;
+  h3 {
+    @apply text-lg;
+  }
+  h5 {
+    @apply text-base mt-1;
+  }
+  .btnGroup button {
+    @apply py-1 mt-1;
+  }
+}
+
+.medium {
+  @apply max-h-[280px] max-w-[480px] p-12;
+  h3 {
+    @apply text-3xl;
+  }
+  h5 {
+    @apply text-xl mt-5;
+  }
+  .btnGroup {
+    button {
+      @apply py-3 text-xl mt-7;
+    }
+  }
+}
+
+.large {
+  @apply max-h-[350px] max-w-[600px] p-12;
+  h3 {
+    @apply text-5xl;
+  }
+  h5 {
+    @apply text-3xl mt-5;
+  }
+  input {
+    @apply text-3xl p-6 border-2;
+  }
+  .btnGroup button {
+    @apply py-5 text-3xl mt-10;
+  }
+}

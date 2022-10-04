@@ -1,0 +1,87 @@
+.modal7 {
+  @apply flex flex-col items-center text-center relative rounded-xl shadow-lg;
+  .closeBtn {
+    @apply absolute top-3 right-3;
+    svg {
+      @apply w-7 h-7;
+    }
+  }
+  h3 {
+    @apply font-bold;
+  }
+  input {
+    @apply rounded-lg w-full;
+  }
+  .btnGroup {
+    @apply w-full flex justify-end;
+    button {
+      @apply rounded-lg;
+    }
+  }
+}
+
+.small {
+  @apply px-5 py-2 max-h-[200px] max-w-[350px];
+  h3 {
+    @apply text-base;
+  }
+  h5 {
+    @apply text-sm my-1;
+  }
+  input {
+    @apply text-sm p-1 border;
+  }
+  label {
+    @apply flex items-center text-xs w-full mt-1;
+    input {
+      @apply w-3 h-3 mr-1;
+    }
+  }
+  .btnGroup button {
+    @apply py-1 px-3 text-sm mt-1;
+  }
+}
+
+.medium {
+  @apply px-8 py-5 max-h-[250px] max-w-[450px];
+  h3 {
+    @apply text-xl;
+  }
+  h5 {
+    @apply text-lg my-3;
+  }
+  input {
+    @apply text-base p-2 border;
+  }
+  label {
+    @apply flex items-center w-full mt-3;
+    input {
+      @apply w-5 h-5 mr-1;
+    }
+  }
+  .btnGroup button {
+    @apply py-1 px-4 text-lg mt-2;
+  }
+}
+
+.large {
+  @apply px-24 py-16 max-h-[400px] max-w-[740px];
+  h3 {
+    @apply text-4xl;
+  }
+  h5 {
+    @apply text-2xl my-5;
+  }
+  input {
+    @apply text-base p-3 border-2;
+  }
+  label {
+    @apply flex items-center w-full mt-5;
+    input {
+      @apply w-5 h-5 mr-2;
+    }
+  }
+  .btnGroup button {
+    @apply py-3 px-6 text-xl mt-5;
+  }
+}

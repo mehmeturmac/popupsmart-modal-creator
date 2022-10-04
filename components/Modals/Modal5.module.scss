@@ -1,0 +1,78 @@
+.modal5 {
+  @apply flex flex-col items-center text-center relative rounded-xl shadow-lg;
+  .closeBtn {
+    @apply absolute top-3 right-3;
+    svg {
+      @apply w-7 h-7;
+    }
+  }
+  h3 {
+    @apply font-bold;
+  }
+  input {
+    @apply rounded-lg w-full bg-white text-black placeholder:text-gray-500 border-gray-300;
+  }
+  .btnGroup {
+    @apply space-x-3 w-full flex justify-center;
+    button {
+      @apply w-full rounded-lg;
+    }
+  }
+}
+
+.small {
+  @apply p-5 space-y-2 max-h-[300px] max-w-[280px];
+  img,
+  svg {
+    @apply w-16 h-16;
+  }
+  h3 {
+    @apply text-lg;
+  }
+  input {
+    @apply p-2 border;
+  }
+  .btnGroup button {
+    @apply py-2;
+  }
+}
+
+.medium {
+  @apply p-10 space-y-4 max-h-[480px] max-w-[446px];
+  img,
+  svg {
+    @apply w-24 h-24;
+  }
+  h3 {
+    @apply text-3xl;
+  }
+  h5 {
+    @apply text-2xl;
+  }
+  input {
+    @apply text-xl p-4 border-2;
+  }
+  .btnGroup button {
+    @apply py-4 text-xl;
+  }
+}
+
+.large {
+  @apply p-16 space-y-6 max-h-[640px] max-w-[600px];
+  img,
+  svg {
+    @apply w-36 h-36;
+  }
+  h3 {
+    @apply text-5xl;
+  }
+  h5 {
+    @apply text-3xl;
+  }
+  input {
+    @apply text-3xl p-6 border-2;
+  }
+  .btnGroup button {
+    @apply py-6 text-3xl;
+  }
+}

@@ -4,12 +4,14 @@ import { MainContext } from '../../context/mainContext';
 import { MainContextInterface } from '../../context/@types.main';
 
 export default function Card({ id }: any) {
-  const { setModalID } = React.useContext(MainContext) as MainContextInterface;
+  const { modalID, setModalID } = React.useContext(MainContext) as MainContextInterface;
   return (
     <div className={styles.card}>
       <img src={`/modals/modal${id}.png`} />
-      <span></span>
-      <button onClick={() => setModalID(id)}>Select template</button>
+      <span className={id === modalID ? 'opacity-100' : 'opacity-0'}></span>
+      <button className={id === modalID ? 'opacity-100' : 'opacity-0'} onClick={() => setModalID(id)}>
+        {id === modalID ? 'Selected template' : 'Select template'}
+      </button>
     </div>
   );
 }

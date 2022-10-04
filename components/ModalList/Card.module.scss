@@ -4,10 +4,10 @@
     @apply w-44 h-44 object-contain;
   }
   span {
-    @apply bg-[#7D4AEA]/[.5] w-full h-full opacity-0 rounded-xl absolute;
+    @apply bg-[#7D4AEA]/[.5] w-full h-full rounded-xl absolute;
   }
   button {
-    @apply bg-white text-[#7D4AEA] font-semibold py-4 px-6 rounded-xl shadow-2xl opacity-0 hover:opacity-100 absolute;
+    @apply bg-white text-[#7D4AEA] font-semibold py-4 px-6 rounded-xl shadow-2xl hover:opacity-100 absolute;
   }
   &:hover {
     span,

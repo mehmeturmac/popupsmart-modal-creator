@@ -1,0 +1,192 @@
+@import 'https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap';
+@import './reset.css';
+#modal2 {
+  position: fixed;
+  z-index: 9999999;
+  margin: 40px;
+}
+
+.modal2-popup {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  border-radius: 0.75rem;
+  box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  opacity: 1;
+  transition: opacity 0.5s;
+}
+
+.hide {
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.5s, visibility 0.5s;
+}
+
+.modal2-popup .closeBtn {
+  position: absolute;
+  top: 0.75rem;
+  right: 0.75rem;
+}
+
+.modal2-popup .closeBtn svg {
+  width: 1.75rem;
+  height: 1.75rem;
+}
+
+.modal2-popup h6 {
+  font-weight: 500;
+}
+
+.modal2-popup h3 {
+  font-weight: 700;
+}
+
+.modal2-popup .radioGroup {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: start;
+  width: 100%;
+  padding: 0.25rem;
+}
+
+.modal2-popup .radioGroup label {
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+}
+
+.modal2-popup .radioGroup label input {
+  width: 1.25rem;
+  height: 1.25rem;
+  margin-right: 0.5rem;
+}
+
+.modal2-popup .radioGroup p {
+  opacity: 0.6;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  padding: 0.25rem 1.75rem;
+}
+
+.modal2-popup .btnGroup {
+  width: 100%;
+  display: flex;
+  margin-top: 2.5rem;
+}
+
+.modal2-popup .btnGroup button {
+  width: 100%;
+  border-radius: 0.5rem;
+  margin-left: 0.375rem;
+  margin-right: 0.375rem;
+}
+
+.small {
+  max-height: 400px;
+  max-width: 320px;
+  padding: 1.25rem;
+}
+
+.small h6 {
+  font-size: 1rem;
+  line-height: 1.5rem;
+}
+
+.small h3 {
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+}
+
+.small .radioGroup label {
+  margin-top: 0.25rem;
+}
+
+.small .btnGroup button {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+
+.medium {
+  max-height: 550px;
+  max-width: 480px;
+  padding: 2.5rem;
+}
+
+.medium h6 {
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+}
+
+.medium h3 {
+  font-size: 1.875rem;
+  line-height: 2.25rem;
+  margin-top: 0.5rem;
+}
+
+.medium h5 {
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+  margin-top: 0.5rem;
+}
+
+.medium .radioGroup label {
+  margin-top: 1.25rem;
+}
+
+.medium .btnGroup button {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+}
+
+.large {
+  max-height: 700px;
+  max-width: 560px;
+  padding: 3rem;
+}
+
+.large h6 {
+  font-size: 1.5rem;
+  line-height: 2rem;
+}
+
+.large h3 {
+  font-size: 2.25rem;
+  line-height: 2.5rem;
+  margin-top: 1rem;
+}
+
+.large h5 {
+  font-size: 1.875rem;
+  line-height: 2.25rem;
+  margin-top: 1rem;
+}
+
+.large .radioGroup label {
+  font-size: 1.5rem;
+  line-height: 2rem;
+  margin-top: 2rem;
+}
+
+.large .radioGroup label input {
+  width: 1.75rem;
+  height: 1.75rem;
+}
+
+.large .radioGroup p {
+  font-size: 1rem;
+  line-height: 1.5rem;
+  padding-left: 2.25rem;
+  padding-right: 2.25rem;
+}
+
+.large .btnGroup button {
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+  font-size: 1.875rem;
+  line-height: 2.25rem;
+}

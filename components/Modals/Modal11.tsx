@@ -1,4 +1,4 @@
-import styles from './Modal1.module.scss';
+import styles from './Modal11.module.scss';
 import * as React from 'react';
 import { MainContext } from '../../context/mainContext';
 import { MainContextInterface } from '../../context/@types.main';
@@ -13,28 +13,39 @@ const closeBtn = (
   </svg>
 );
 
-export default function Modal1() {
+export default function Modal11() {
   const { size, colors, image, setImage, setLogo, contents, setContents } = React.useContext(MainContext) as MainContextInterface;
 
   React.useEffect(() => {
-    setContents({ content1: 'Install local now', content2: 'We’ve gone native, try it!', content3: 'Continue', content4: 'Not now' });
-    setImage('https://thumbsnap.com/i/v32Btvb5.png');
+    setContents({
+      content1: 'Sign up',
+      content2: 'Join new adventure',
+      content3: 'Enter Full name',
+      content4: 'Enter your email',
+      content5: 'Sign up',
+      content6: 'Forgot password',
+      content7: 'Log In',
+    });
+    setImage('https://thumbsnap.com/i/uEhsN4FZ.png');
     setLogo('');
   }, []);
 
   return (
-    <div style={{ color: colors.color2, backgroundColor: colors.color1 }} className={`${styles.modal1} ${size === 'small' ? styles.small : size === 'medium' ? styles.medium : styles.large}`}>
-      <button className={styles.closeBtn}>{closeBtn}</button>
+    <div className={`${styles.modal11} ${size === 'small' ? styles.small : size === 'medium' ? styles.medium : styles.large}`}>
       <img src={image} alt="image" />
-      <div>
+      <div className={styles.right} style={{ color: colors.color2, backgroundColor: colors.color1 }}>
+        <button className={styles.closeBtn}>{closeBtn}</button>
         <h3>{contents.content1}</h3>
         <h5>{contents.content2}</h5>
+        <input type="text" placeholder={contents.content3} />
+        <input type="text" placeholder={contents.content4} />
         <div className={styles.btnGroup}>
-          <button style={{ color: 'rgba(255, 255, 255, 0.9)', backgroundColor: colors.color3 }}>{contents.content3}</button>
-          <button style={{ color: colors.color2, backgroundColor: 'rgba(0, 0, 0, 0.1)' }} className={`border`}>
-            {contents.content4}
-          </button>
+          <button style={{ color: 'rgba(255, 255, 255, 0.9)', backgroundColor: colors.color3 }}>{contents.content5}</button>
         </div>
+        <span>
+          <a>{contents.content6}</a>
+          <a>{contents.content7}</a>
+        </span>
       </div>
     </div>
   );

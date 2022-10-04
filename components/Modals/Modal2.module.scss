@@ -1,0 +1,95 @@
+.modal2 {
+  @apply flex flex-col items-center text-center relative rounded-xl shadow-lg;
+  .closeBtn {
+    @apply absolute top-3 right-3;
+    svg {
+      @apply w-7 h-7;
+    }
+  }
+  h6 {
+    @apply font-medium;
+  }
+  h3 {
+    @apply font-bold;
+  }
+  .radioGroup {
+    @apply flex flex-col items-start text-start w-full p-1;
+    label {
+      @apply font-medium flex items-center;
+      input {
+        @apply w-5 h-5 mr-2;
+      }
+    }
+    p {
+      @apply opacity-60 text-sm py-1 px-7;
+    }
+  }
+  .btnGroup {
+    @apply w-full flex mt-10;
+    button {
+      @apply w-full rounded-lg mx-1.5;
+    }
+  }
+}
+
+.small {
+  @apply max-h-[400px] max-w-[320px] p-5;
+  h6 {
+    @apply text-base;
+  }
+  h3 {
+    @apply text-lg;
+  }
+  .radioGroup label {
+    @apply mt-1;
+  }
+  .btnGroup button {
+    @apply py-2;
+  }
+}
+
+.medium {
+  @apply max-h-[550px] max-w-[480px] p-10;
+  h6 {
+    @apply text-lg;
+  }
+  h3 {
+    @apply text-3xl mt-2;
+  }
+  h5 {
+    @apply text-xl mt-2;
+  }
+  .radioGroup label {
+    @apply mt-5;
+  }
+  .btnGroup button {
+    @apply py-4 text-xl;
+  }
+}
+
+.large {
+  @apply max-h-[700px] max-w-[560px] p-12;
+  h6 {
+    @apply text-2xl;
+  }
+  h3 {
+    @apply text-4xl mt-4;
+  }
+  h5 {
+    @apply text-3xl mt-4;
+  }
+  .radioGroup {
+    label {
+      @apply text-2xl mt-8;
+      input {
+        @apply w-7 h-7;
+      }
+    }
+    p {
+      @apply text-base px-9;
+    }
+  }
+  .btnGroup button {
+    @apply py-6 text-3xl;
+  }
+}
