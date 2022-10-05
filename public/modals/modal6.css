@@ -1,12 +1,12 @@
 @import 'https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap';
 @import './reset.css';
-#modal3 {
+#modal6 {
   position: fixed;
   z-index: 9999999;
   margin: 40px;
 }
 
-.modal3-popup {
+.modal6-popup {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -24,68 +24,48 @@
   /* transition: opacity 0.5s, visibility 0.5s; */
 }
 
-.modal3-popup .closeBtn {
+.modal6-popup .closeBtn {
   position: absolute;
   top: 0.75rem;
   right: 0.75rem;
 }
 
-.modal3-popup .closeBtn svg {
+.modal6-popup .closeBtn svg {
   width: 1.75rem;
   height: 1.75rem;
 }
 
-.modal3-popup h3 {
+.modal6-popup h3 {
   font-weight: 700;
 }
 
-.modal3-popup h6 {
-  opacity: 0.8;
-}
-
-.modal3-popup h6 span {
-  font-weight: 600;
-}
-
-.modal3-popup .btnGroup {
+.modal6-popup .btnGroup {
   width: 100%;
   display: flex;
-  flex-direction: column;
   justify-content: center;
 }
 
-.modal3-popup .btnGroup button {
+.modal6-popup .btnGroup button {
   border-radius: 0.5rem;
   width: 100%;
+  margin-left: 0.25rem;
+  margin-right: 0.25rem;
 }
 
 .small {
-  padding: 0.75rem;
-  max-height: 300px;
+  padding: 1rem;
+  max-height: 160px;
   max-width: 280px;
-}
-
-.small img,
-svg {
-  width: 4rem;
-  height: 4rem;
 }
 
 .small h3 {
   font-size: 1.125rem;
   line-height: 1.75rem;
-  margin-top: 0.25rem;
 }
 
 .small h5 {
   font-size: 1rem;
   line-height: 1.5rem;
-  margin-top: 0.25rem;
-}
-
-.small h6 {
-  font-size: 0.875rem;
-  line-height: 1.25rem;
   margin-top: 0.25rem;
 }
 
@@ -96,21 +76,14 @@ svg {
 }
 
 .medium {
-  padding: 2rem;
-  max-height: 520px;
+  padding: 3rem;
+  max-height: 280px;
   max-width: 480px;
-}
-
-.medium img,
-svg {
-  width: 6rem;
-  height: 6rem;
 }
 
 .medium h3 {
   font-size: 1.875rem;
   line-height: 2.25rem;
-  margin-top: 1.25rem;
 }
 
 .medium h5 {
@@ -119,34 +92,23 @@ svg {
   margin-top: 1.25rem;
 }
 
-.medium h6 {
-  margin-top: 1.25rem;
-}
-
 .medium .btnGroup button {
-  padding-top: 1rem;
-  padding-bottom: 1rem;
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
   font-size: 1.25rem;
   line-height: 1.75rem;
-  margin-top: 1rem;
+  margin-top: 1.75rem;
 }
 
 .large {
   padding: 3rem;
-  max-height: 640px;
+  max-height: 350px;
   max-width: 600px;
-}
-
-.large img,
-svg {
-  width: 9rem;
-  height: 9rem;
 }
 
 .large h3 {
   font-size: 3rem;
   line-height: 1;
-  margin-top: 1.25rem;
 }
 
 .large h5 {
@@ -155,16 +117,10 @@ svg {
   margin-top: 1.25rem;
 }
 
-.large h6 {
-  font-size: 1.25rem;
-  line-height: 1.75rem;
-  margin-top: 1.25rem;
-}
-
 .large .btnGroup button {
   padding-top: 1.25rem;
   padding-bottom: 1.25rem;
   font-size: 1.875rem;
   line-height: 2.25rem;
-  margin-top: 0.75rem;
+  margin-top: 2.5rem;
 }

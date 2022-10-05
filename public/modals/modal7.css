@@ -1,0 +1,214 @@
+@import 'https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap';
+@import './reset.css';
+#modal7 {
+  position: fixed;
+  z-index: 9999999;
+  margin: 40px;
+}
+
+.modal7-popup {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  border-radius: 0.75rem;
+  box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  opacity: 1;
+  transition: opacity 0.5s;
+}
+
+.hide {
+  visibility: hidden;
+  opacity: 0;
+  /* transition: opacity 0.5s, visibility 0.5s; */
+}
+
+.modal7-popup .closeBtn {
+  position: absolute;
+  top: 0.75rem;
+  right: 0.75rem;
+}
+
+.modal7-popup .closeBtn svg {
+  width: 1.75rem;
+  height: 1.75rem;
+}
+
+.modal7-popup h3 {
+  font-weight: 700;
+}
+
+.modal7-popup input {
+  border-radius: 0.5rem;
+  width: 100%;
+}
+
+.modal7-popup input::placeholder {
+  color: #333333;
+}
+
+.modal7-popup .btnGroup {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.modal7-popup .btnGroup button {
+  border-radius: 0.5rem;
+}
+
+.small {
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  max-height: 200px;
+  max-width: 350px;
+}
+
+.small h3 {
+  font-size: 1rem;
+  line-height: 1.5rem;
+}
+
+.small h5 {
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  margin-top: 0.25rem;
+  margin-bottom: 0.25rem;
+}
+
+.small input {
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  padding: 0.25rem;
+  border-width: 1px;
+}
+
+.small label {
+  display: flex;
+  align-items: center;
+  font-size: 0.75rem;
+  line-height: 1rem;
+  width: 100%;
+  margin-top: 0.25rem;
+}
+
+.small label input {
+  width: 0.75rem;
+  height: 0.75rem;
+  margin-right: 0.25rem;
+}
+
+.small .btnGroup button {
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  margin-top: 0.25rem;
+}
+
+.medium {
+  padding-left: 2rem;
+  padding-right: 2rem;
+  padding-top: 1.25rem;
+  padding-bottom: 1.25rem;
+  max-height: 250px;
+  max-width: 450px;
+}
+
+.medium h3 {
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+}
+
+.medium h5 {
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+  margin-top: 0.75rem;
+  margin-bottom: 0.75rem;
+}
+
+.medium input {
+  font-size: 1rem;
+  line-height: 1.5rem;
+  border-width: 1px;
+  padding: 0.5rem;
+}
+
+.medium label {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  margin-top: 0.75rem;
+}
+
+.medium label input {
+  width: 1.25rem;
+  height: 1.25rem;
+  margin-right: 0.25rem;
+}
+
+.medium .btnGroup button {
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+  margin-top: 0.5rem;
+}
+
+.large {
+  padding-left: 6rem;
+  padding-right: 6rem;
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+  max-height: 400px;
+  max-width: 740px;
+}
+
+.large h3 {
+  font-size: 2.25rem;
+  line-height: 2.5rem;
+}
+
+.large h5 {
+  font-size: 1.5rem;
+  line-height: 2rem;
+  margin-top: 1.25rem;
+  margin-bottom: 1.25rem;
+}
+
+.large input {
+  font-size: 1rem;
+  line-height: 1.5rem;
+  border-width: 2px;
+  padding: 0.75rem;
+}
+
+.large label {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  margin-top: 1.25rem;
+}
+
+.large label input {
+  width: 1.25rem;
+  height: 1.25rem;
+  margin-right: 0.5;
+}
+
+.large .btnGroup button {
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+  margin-top: 1.25rem;
+}

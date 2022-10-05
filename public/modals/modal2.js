@@ -109,7 +109,7 @@ function Pop() {
         <p>${contents.content8}</p>
       </div>
       <div class="btnGroup">
-      <button id="closeBtn2" style="color: ${colors.color2}; background-color: rgba(0, 0, 0, 0.1); border-style: solid; border-width: 1px">
+      <button id="closeBtn2" style="color: ${colors.color2}; background-color: rgba(0, 0, 0, 0.1);">
       ${contents.content9}
       </button>
       <button id="submitBtn" style="color: rgba(255, 255, 255, 0.9); background-color: ${colors.color3}">${contents.content10}</button>

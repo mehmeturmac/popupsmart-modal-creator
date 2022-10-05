@@ -1,5 +1,5 @@
 function Pop() {
-  var cssRuleFile = 'http://localhost:3000/modals/modal0.css';
+  var cssRuleFile = 'http://localhost:3000/modals/modal3.css';
   let lnk = document.createElement('link');
   lnk.setAttribute('rel', 'stylesheet');
   lnk.setAttribute('type', 'text/css');
@@ -16,14 +16,21 @@ function Pop() {
     </svg>`;
 
   const logoSvg = `<svg width="90" height="90" viewBox="0 0 90 90" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M45 90C69.8528 90 90 69.8528 90 45C90 20.1472 69.8528 0 45 0C20.1472 0 0 20.1472 0 45C0 69.8528 20.1472 90 45 90Z" fill="#7D4AEA" />
-      <path
-        d="M50 46.18L51.8 53.94L45 49.84L38.2 53.94L40 46.2L34 41.02L41.92 40.34L45 33.04L48.08 40.32L56 41L50 46.18ZM45 27.38L59 33.6V43C59 52.04 53.04 60.38 45 62.86C36.96 60.38 31 52.04 31 43V33.6L45 27.38ZM45 23L27 31V43C27 54.1 34.68 64.48 45 67C55.32 64.48 63 54.1 63 43V31L45 23Z"
-        fill="white"
-      />
-    </svg>`;
+  <path d="M45 90C69.8528 90 90 69.8528 90 45C90 20.1472 69.8528 0 45 0C20.1472 0 0 20.1472 0 45C0 69.8528 20.1472 90 45 90Z" fill="#7D4AEA" />
+  <path
+    d="M53 39V59H37V39H53ZM50 27H40L38 29H31V33H59V29H52L50 27ZM57 35H33V59C33.0032 60.0599 33.4256 61.0755 34.1751 61.8249C34.9245 62.5744 35.9401 62.9968 37 63H53C54.0599 62.9968 55.0755 62.5744 55.8249 61.8249C56.5744 61.0755 56.9968 60.0599 57 59V35Z"
+    fill="white"
+  />
+</svg>`;
 
-  let contents = { content1: 'Security Code', content2: 'This code expires in 24 hours', content3: 'Code', content4: 'Cancel', content5: 'Continue' };
+  let contents = {
+    content1: 'Delete your profile',
+    content2: 'Your profile will be automatically deleted after 1 month.',
+    content3: 'You won’t be able to access to your profile after ',
+    content4: '30.08.2021',
+    content5: 'Delete my profile',
+    content6: 'Cancel',
+  };
 
   let colors = { color1: '#FFFFFF', color2: '#000000', color3: '#7D4AEA' };
 
@@ -36,7 +43,7 @@ function Pop() {
   let createPopUp = function () {
     if (typeof conDivObj === 'undefined') {
       conDivObj = document.createElement('DIV');
-      conDivObj.setAttribute('id', 'modal0');
+      conDivObj.setAttribute('id', 'modal3');
     }
 
     // Positions
@@ -80,22 +87,23 @@ function Pop() {
     }
 
     conDivObj.innerHTML = `
-    <div style="color: ${colors.color2}; background-color: ${colors.color1};" id="modal0-popup" class="modal0-popup hide ${
+    <div style="color: ${colors.color2}; background-color: ${colors.color1};" id="modal3-popup" class="modal3-popup hide ${
       appearance.size === 'small' ? 'small' : appearance.size === 'medium' ? 'medium' : 'large'
     }">
       <button class="closeBtn" id="closeBtn" >${closeBtn}</button>
       ${appearance.logo.length < 1 || appearance.logo === 'default' ? logoSvg : `<img src=${appearance.logo} alt="logo" />`}
       <h3>${contents.content1}</h3>
       <h5>${contents.content2}</h5>
-      <input type="text" id="popup-input" placeholder="${contents.content3}" />
+      <h6>
+        ${contents.content3} <span>${contents.content4}</span>
+      </h6>
       <div class="btnGroup">
+      <button id="submitBtn" style="color: rgba(255, 255, 255, 0.9); background-color: ${colors.color3}">${contents.content5}</button>
         <button id="closeBtn2" style="color: ${colors.color2}; background-color: rgba(0, 0, 0, 0.1); border-style: solid; border-width: 1px">
-          ${contents.content4}
+          ${contents.content6}
         </button>
-        <button id="submitBtn" style="color: rgba(255, 255, 255, 0.9); background-color: ${colors.color3}">${contents.content5}</button>
       </div>
-    </div>
-    `;
+    </div>`;
     document.body.appendChild(conDivObj);
 
     function actions() {
@@ -132,8 +140,7 @@ function Pop() {
       const closeBtn = document.getElementById('closeBtn');
       const closeBtn2 = document.getElementById('closeBtn2');
       const submitBtn = document.getElementById('submitBtn');
-      const popup = document.getElementById('modal0-popup').classList;
-      const input = document.getElementById('popup-input');
+      const popup = document.getElementById('modal3-popup').classList;
 
       // Event Listeners
       closeBtn.addEventListener('click', () => popup.add('hide'));
@@ -154,10 +161,7 @@ function Pop() {
       if (webHook.url) {
         let sentData = { ...systemData };
 
-        let formData;
-        input.addEventListener('input', (e) => {
-          formData = e.target.value;
-        });
+        let formData = contents.content5;
 
         let sendData = contents.content1;
 
